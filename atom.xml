@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-06-20T23:33:51.855Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>author</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My New Post</title>
+    <link href="http://yoursite.com/uncategorized/My-New-Post/"/>
+    <id>http://yoursite.com/uncategorized/My-New-Post/</id>
+    <published>2018-06-20T23:32:19.000Z</published>
+    <updated>2018-06-20T23:33:51.855Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;hello-world&quot;&gt;&lt;a href=&quot;#hello-world&quot; class=&quot;headerlink&quot; title=&quot;hello world&quot;&gt;&lt;/a&gt;hello world&lt;/h1&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/uncategorized/hello-world/"/>
+    <id>http://yoursite.com/uncategorized/hello-world/</id>
+    <published>2018-06-20T13:50:04.711Z</published>
+    <updated>2018-05-17T01:39:18.124Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>多线程编程基础</title>
+    <link href="http://yoursite.com/uncategorized/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/uncategorized/多线程编程基础/</id>
+    <published>2018-06-20T09:45:55.000Z</published>
+    <updated>2018-06-21T00:02:42.281Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code&gt;#include &amp;lt;windows.h&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+
+DWORD WINAPI ThreadProc(LPVOID lpParam)
+{
+    printf(&amp;quot;ThreadProc \r\n&amp;q
+      
+    
+    </summary>
+    
+    
+      <category term="programme" scheme="http://yoursite.com/tags/programme/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一个win32汇编程序</title>
+    <link href="http://yoursite.com/uncategorized/%E7%AC%AC%E4%B8%80%E4%B8%AAwin32%E6%B1%87%E7%BC%96%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://yoursite.com/uncategorized/第一个win32汇编程序/</id>
+    <published>2018-06-12T11:58:55.000Z</published>
+    <updated>2018-06-21T00:03:02.063Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Win32编程&quot;&gt;&lt;a href=&quot;#Win32编程&quot; class=&quot;headerlink&quot; title=&quot;Win32编程&quot;&gt;&lt;/a&gt;Win32编程&lt;/h1&gt;&lt;p&gt;&lt;code&gt;This is code&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highli
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>VC++SOCK编程客户器端代码</title>
+    <link href="http://yoursite.com/uncategorized/sockClient/"/>
+    <id>http://yoursite.com/uncategorized/sockClient/</id>
+    <published>2018-05-28T11:58:55.000Z</published>
+    <updated>2018-06-20T23:59:04.511Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Winsock编程&quot;&gt;&lt;a href=&quot;#Winsock编程&quot; class=&quot;headerlink&quot; title=&quot;Winsock编程&quot;&gt;&lt;/a&gt;Winsock编程&lt;/h1&gt;&lt;h2 id=&quot;客户端&quot;&gt;&lt;a href=&quot;#客户端&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>VC++SOCK编程服务器端代码</title>
+    <link href="http://yoursite.com/uncategorized/sockServer/"/>
+    <id>http://yoursite.com/uncategorized/sockServer/</id>
+    <published>2018-05-28T11:58:55.000Z</published>
+    <updated>2018-06-20T23:58:44.409Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Winsock编程&quot;&gt;&lt;a href=&quot;#Winsock编程&quot; class=&quot;headerlink&quot; title=&quot;Winsock编程&quot;&gt;&lt;/a&gt;Winsock编程&lt;/h1&gt;&lt;h2 id=&quot;服务器端&quot;&gt;&lt;a href=&quot;#服务器端&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>删除所有分区共享批处理</title>
+    <link href="http://yoursite.com/uncategorized/%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E5%88%86%E5%8C%BA%E5%85%B1%E4%BA%AB/"/>
+    <id>http://yoursite.com/uncategorized/删除所有分区共享/</id>
+    <published>2018-05-28T11:58:55.000Z</published>
+    <updated>2018-06-21T00:02:50.760Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;删除所有分区共享&quot;&gt;&lt;a href=&quot;#删除所有分区共享&quot; class=&quot;headerlink&quot; title=&quot;删除所有分区共享&quot;&gt;&lt;/a&gt;删除所有分区共享&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;先列举存在的分区，然后再逐个删除以分区命名的共享；&lt;/li&gt;
+&lt;li&gt;通过修改注
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>学习笔记：大O记法</title>
+    <link href="http://yoursite.com/uncategorized/%E5%A4%A7O%E8%AE%B0%E6%B3%95/"/>
+    <id>http://yoursite.com/uncategorized/大O记法/</id>
+    <published>2018-05-28T11:58:55.000Z</published>
+    <updated>2018-06-21T12:18:54.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;大O记法&quot;&gt;&lt;a href=&quot;#大O记法&quot; class=&quot;headerlink&quot; title=&quot;大O记法&quot;&gt;&lt;/a&gt;大O记法&lt;/h1&gt;&lt;h3 id=&quot;C-的大O记法是算法的时间复杂度表达公式。简单的说大O记法可以告诉你一个算法耗费的时间长度同算法所处理的数据量大小
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
