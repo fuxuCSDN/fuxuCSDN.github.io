@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[new]]></title>
-    <url>%2F2018%2F06%2F22%2Fnew%2F</url>
-    <content type="text"><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[多线程编程基础]]></title>
     <url>%2F2018%2F06%2F20%2F%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80%2F</url>
     <content type="text"><![CDATA[#include &lt;windows.h&gt; #include &lt;stdio.h&gt; DWORD WINAPI ThreadProc(LPVOID lpParam) { printf(&quot;ThreadProc \r\n&quot;); return 0; } int main() { HANDLE hThread = CreateThread(NULL,0,ThreadProc,NULL,0,NULL); WaitForSingleObject(hThread, INFINITE); printf(&quot;main \r\n&quot;); CloseHandle(hThread); return 0; }]]></content>
@@ -21,12 +16,12 @@
   <entry>
     <title><![CDATA[VC++SOCK编程服务器端代码]]></title>
     <url>%2F2018%2F05%2F28%2FsockServer%2F</url>
-    <content type="text"><![CDATA[Winsock编程服务器端This is code #include &lt;stdio.h&gt; #include &lt;Winsock2.h&gt; void main() { //加载套接字库 WORD wVersionRequested; WSADATA wsaData; int err; wVersionRequested = MAKEWORD( 1, 1 ); err = WSAStartup( wVersionRequested, &amp;wsaData ); if ( err != 0 ) { return; } if ( LOBYTE( wsaData.wVersion ) != 1 || HIBYTE( wsaData.wVersion ) != 1 ) { WSACleanup( ); return; } //创建用于监听的套接字 SOCKET sockSrv=socket(AF_INET,SOCK_STREAM,0); SOCKADDR_IN addrSrv; addrSrv.sin_addr.S_un.S_addr=htonl(INADDR_ANY); addrSrv.sin_family=AF_INET; addrSrv.sin_port=htons(6000); //绑定淘套接字 bind(sockSrv,(SOCKADDR*)&amp;addrSrv,sizeof(SOCKADDR)); //将套接字设置为监听，准备客户请求 listen(sockSrv,5); SOCKADDR_IN addrClient; int len=sizeof(SOCKADDR); while(1) { //等待客户请求到来 SOCKET sockConn=accept(sockSrv,(SOCKADDR*)&amp;addrClient,&amp;len); char sendBuf[100]; sprintf(sendBuf,&quot;Welcome %s to XXXX&quot;,inet_ntoa(addrClient.sin_addr)); //发送数据 send(sockConn,sendBuf,strlen(sendBuf)+1,0); char recvBuf[100]; //接受数据 recv(sockConn,recvBuf,100,0); //打印接受的数据 printf(&quot;%s\n&quot;,recvBuf); //关闭套接字 closesocket(sockConn); } }]]></content>
+    <content type="text"><![CDATA[Winsock编程服务器端This is code #include &lt;stdio.h&gt; #include &lt;Winsock2.h&gt;1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556void main()&#123; //加载套接字库 WORD wVersionRequested; WSADATA wsaData; int err; wVersionRequested = MAKEWORD( 1, 1 ); err = WSAStartup( wVersionRequested, &amp;wsaData ); if ( err != 0 ) &#123; return; &#125; if ( LOBYTE( wsaData.wVersion ) != 1 || HIBYTE( wsaData.wVersion ) != 1 ) &#123; WSACleanup( ); return; &#125; //创建用于监听的套接字 SOCKET sockSrv=socket(AF_INET,SOCK_STREAM,0); SOCKADDR_IN addrSrv; addrSrv.sin_addr.S_un.S_addr=htonl(INADDR_ANY); addrSrv.sin_family=AF_INET; addrSrv.sin_port=htons(6000); //绑定淘套接字 bind(sockSrv,(SOCKADDR*)&amp;addrSrv,sizeof(SOCKADDR)); //将套接字设置为监听，准备客户请求 listen(sockSrv,5); SOCKADDR_IN addrClient; int len=sizeof(SOCKADDR); while(1) &#123; //等待客户请求到来 SOCKET sockConn=accept(sockSrv,(SOCKADDR*)&amp;addrClient,&amp;len); char sendBuf[100]; sprintf(sendBuf,"Welcome %s to XXXX",inet_ntoa(addrClient.sin_addr)); //发送数据 send(sockConn,sendBuf,strlen(sendBuf)+1,0); char recvBuf[100]; //接受数据 recv(sockConn,recvBuf,100,0); //打印接受的数据 printf("%s\n",recvBuf); //关闭套接字 closesocket(sockConn); &#125;&#125;]]></content>
   </entry>
   <entry>
     <title><![CDATA[VC++SOCK编程客户器端代码]]></title>
     <url>%2F2018%2F05%2F28%2FsockClient%2F</url>
-    <content type="text"><![CDATA[Winsock编程客户端This is code #include &lt;stdio.h&gt; #include &lt;Winsock2.h&gt; void main() { //加载套接字库 WORD wVersionRequested; WSADATA wsaData; int err; wVersionRequested = MAKEWORD( 1, 1 ); err = WSAStartup( wVersionRequested, &amp;wsaData ); if ( err != 0 ) { return; } if ( LOBYTE( wsaData.wVersion ) != 1 || HIBYTE( wsaData.wVersion ) != 1 ) { WSACleanup( ); return; } SOCKET sockClient=socket(AF_INET,SOCK_STREAM,0); SOCKADDR_IN addrSrv; addrSrv.sin_addr.S_un.S_addr=inet_addr(&quot;127.0.0.1&quot;); addrSrv.sin_family=AF_INET; addrSrv.sin_port=htons(6000); connect(sockClient,(SOCKADDR*)&amp;addrSrv,sizeof(SOCKADDR)); char recvBuf[100]; recv(sockClient,recvBuf,100,0); printf(&quot;%s\n&quot;,recvBuf); send(sockClient,&quot;This is zhangsan&quot;,strlen(&quot;This is zhangsan&quot;)+1,0); closesocket(sockClient); WSACleanup(); }]]></content>
+    <content type="text"><![CDATA[Winsock编程客户端This is code12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;stdio.h&gt;#include &lt;Winsock2.h&gt;void main()&#123; //加载套接字库 WORD wVersionRequested; WSADATA wsaData; int err; wVersionRequested = MAKEWORD( 1, 1 ); err = WSAStartup( wVersionRequested, &amp;wsaData ); if ( err != 0 ) &#123; return; &#125; if ( LOBYTE( wsaData.wVersion ) != 1 || HIBYTE( wsaData.wVersion ) != 1 ) &#123; WSACleanup( ); return; &#125; SOCKET sockClient=socket(AF_INET,SOCK_STREAM,0); SOCKADDR_IN addrSrv; addrSrv.sin_addr.S_un.S_addr=inet_addr("127.0.0.1"); addrSrv.sin_family=AF_INET; addrSrv.sin_port=htons(6000); connect(sockClient,(SOCKADDR*)&amp;addrSrv,sizeof(SOCKADDR)); char recvBuf[100]; recv(sockClient,recvBuf,100,0); printf("%s\n",recvBuf); send(sockClient,"This is zhangsan",strlen("This is zhangsan")+1,0); closesocket(sockClient); WSACleanup();&#125;]]></content>
   </entry>
   <entry>
     <title><![CDATA[删除所有分区共享批处理]]></title>

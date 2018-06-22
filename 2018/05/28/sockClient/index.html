@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="Winsock编程客户端This is code #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;Winsock2.h&amp;gt;  void main() {     //加载套接字库     WORD wVersionRequested;     WSADATA wsaData;     int err;      wVersionRequested = MAKEWOR">
+<meta name="description" content="Winsock编程客户端This is code12345678910111213141516171819202122232425262728293031323334353637383940#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;Winsock2.h&amp;gt;void main()&amp;#123;	//加载套接字库	WORD wVersionRequested;	WSA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VC++SOCK编程客户器端代码">
 <meta property="og:url" content="http://9cat.top/2018/05/28/sockClient/index.html">
 <meta property="og:site_name" content="Jack Cat">
-<meta property="og:description" content="Winsock编程客户端This is code #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;Winsock2.h&amp;gt;  void main() {     //加载套接字库     WORD wVersionRequested;     WSADATA wsaData;     int err;      wVersionRequested = MAKEWOR">
+<meta property="og:description" content="Winsock编程客户端This is code12345678910111213141516171819202122232425262728293031323334353637383940#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;Winsock2.h&amp;gt;void main()&amp;#123;	//加载套接字库	WORD wVersionRequested;	WSA">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-20T23:59:04.511Z">
+<meta property="og:updated_time" content="2018-06-22T14:39:08.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VC++SOCK编程客户器端代码">
-<meta name="twitter:description" content="Winsock编程客户端This is code #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;Winsock2.h&amp;gt;  void main() {     //加载套接字库     WORD wVersionRequested;     WSADATA wsaData;     int err;      wVersionRequested = MAKEWOR">
+<meta name="twitter:description" content="Winsock编程客户端This is code12345678910111213141516171819202122232425262728293031323334353637383940#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;Winsock2.h&amp;gt;void main()&amp;#123;	//加载套接字库	WORD wVersionRequested;	WSA">
 
 
 
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-21T07:59:04+08:00">
-                2018-06-21
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-22T22:39:08+08:00">
+                2018-06-22
               </time>
             
           </span>
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  108
+                  148
                 </span>
               
 
@@ -415,49 +415,8 @@
       
 
       
-        <h1 id="Winsock编程"><a href="#Winsock编程" class="headerlink" title="Winsock编程"></a>Winsock编程</h1><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p><code>This is code</code></p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;Winsock2.h&gt;
+        <h1 id="Winsock编程"><a href="#Winsock编程" class="headerlink" title="Winsock编程"></a>Winsock编程</h1><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p><code>This is code</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Winsock2.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//加载套接字库</span></span><br><span class="line">	WORD wVersionRequested;</span><br><span class="line">	WSADATA wsaData;</span><br><span class="line">	<span class="keyword">int</span> err;</span><br><span class="line"></span><br><span class="line">	wVersionRequested = MAKEWORD( <span class="number">1</span>, <span class="number">1</span> );</span><br><span class="line"></span><br><span class="line">	err = WSAStartup( wVersionRequested, &amp;wsaData );</span><br><span class="line">	<span class="keyword">if</span> ( err != <span class="number">0</span> ) &#123;</span><br><span class="line">					   </span><br><span class="line">	    <span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ( LOBYTE( wsaData.wVersion ) != <span class="number">1</span> ||</span><br><span class="line">		  HIBYTE( wsaData.wVersion ) != <span class="number">1</span> ) &#123;</span><br><span class="line">	    WSACleanup( );</span><br><span class="line">	    <span class="keyword">return</span>; </span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	SOCKET sockClient=socket(AF_INET,SOCK_STREAM,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	SOCKADDR_IN addrSrv;</span><br><span class="line">	addrSrv.sin_addr.S_un.S_addr=inet_addr(<span class="string">"127.0.0.1"</span>);</span><br><span class="line">	addrSrv.sin_family=AF_INET;</span><br><span class="line">	addrSrv.sin_port=htons(<span class="number">6000</span>);</span><br><span class="line">	connect(sockClient,(SOCKADDR*)&amp;addrSrv,<span class="keyword">sizeof</span>(SOCKADDR));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> recvBuf[<span class="number">100</span>];</span><br><span class="line">	recv(sockClient,recvBuf,<span class="number">100</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>,recvBuf);</span><br><span class="line">	send(sockClient,<span class="string">"This is zhangsan"</span>,<span class="built_in">strlen</span>(<span class="string">"This is zhangsan"</span>)+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	closesocket(sockClient);</span><br><span class="line">	WSACleanup();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-void main()
-{
-    //加载套接字库
-    WORD wVersionRequested;
-    WSADATA wsaData;
-    int err;
-
-    wVersionRequested = MAKEWORD( 1, 1 );
-
-    err = WSAStartup( wVersionRequested, &amp;wsaData );
-    if ( err != 0 ) {
-
-        return;
-    }
-
-
-    if ( LOBYTE( wsaData.wVersion ) != 1 ||
-          HIBYTE( wsaData.wVersion ) != 1 ) {
-        WSACleanup( );
-        return; 
-
-    }
-    SOCKET sockClient=socket(AF_INET,SOCK_STREAM,0);
-
-    SOCKADDR_IN addrSrv;
-    addrSrv.sin_addr.S_un.S_addr=inet_addr(&quot;127.0.0.1&quot;);
-    addrSrv.sin_family=AF_INET;
-    addrSrv.sin_port=htons(6000);
-    connect(sockClient,(SOCKADDR*)&amp;addrSrv,sizeof(SOCKADDR));
-
-    char recvBuf[100];
-    recv(sockClient,recvBuf,100,0);
-    printf(&quot;%s\n&quot;,recvBuf);
-    send(sockClient,&quot;This is zhangsan&quot;,strlen(&quot;This is zhangsan&quot;)+1,0);
-
-    closesocket(sockClient);
-    WSACleanup();
-}
-</code></pre>
       
     </div>
     
@@ -469,6 +428,13 @@ void main()
 
 
       
+	</div>
+	<div>
+	
+	  
+
+
+	
 	</div>
     
 
@@ -493,6 +459,20 @@ void main()
 
       </div>
     
+
+      <div>
+	
+	  <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ ���Ľ���------</div>
+    
+</div>
+
+
+	
+      </div>
+
+
 
     <footer class="post-footer">
       
@@ -624,7 +604,7 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -658,33 +638,63 @@ var jiathis_config={
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://github.com/your-user-name" target="_blank" title="GitHub">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
                       
-                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://twitter.com/your-user-name" target="_blank" title="Twitter">
+                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
                       
-                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://weibo.com/your-user-name" target="_blank" title="Weibo">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
                       
-                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                        <i class="fa fa-fw fa-google"></i>Google</a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://douban.com/people/your-user-name" target="_blank" title="douban">
+                    <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
                       
-                        <i class="fa fa-fw fa-globe"></i>douban</a>
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/your-user-name" target="_blank" title="zhihu">
+                    <a href="https://www.facebook.com/yourname" target="_blank" title="FB Page">
                       
-                        <i class="fa fa-fw fa-globe"></i>zhihu</a>
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://vk.com/yourname" target="_blank" title="VK Group">
+                      
+                        <i class="fa fa-fw fa-vk"></i>VK Group</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/yourname" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:yourname?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
                   </span>
                 
             </div>
