@@ -75,31 +75,30 @@
 
 
 
-  <meta name="keywords" content="programme," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Jack Cat" type="application/atom+xml" />
 
 
 
 
 
 
-<meta name="description" content="#include &amp;lt;windows.h&amp;gt; #include &amp;lt;stdio.h&amp;gt;  DWORD WINAPI ThreadProc(LPVOID lpParam) {     printf(&amp;quot;ThreadProc \r\n&amp;quot;);     return 0; }  int main() {     HANDLE hThread = CreateThread(">
-<meta name="keywords" content="programme">
+<meta name="description" content="Winsock编程服务器端This is code #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;Winsock2.h&amp;gt;  void main() {     //加载套接字库     WORD wVersionRequested;     WSADATA wsaData;     int err;      wVersionRequested = MAKEWO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多线程编程基础">
-<meta property="og:url" content="http://yoursite.com/uncategorized/多线程编程基础/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#include &amp;lt;windows.h&amp;gt; #include &amp;lt;stdio.h&amp;gt;  DWORD WINAPI ThreadProc(LPVOID lpParam) {     printf(&amp;quot;ThreadProc \r\n&amp;quot;);     return 0; }  int main() {     HANDLE hThread = CreateThread(">
+<meta property="og:title" content="VC++SOCK编程服务器端代码">
+<meta property="og:url" content="http://9cat.top/2018/05/28/sockServer/index.html">
+<meta property="og:site_name" content="Jack Cat">
+<meta property="og:description" content="Winsock编程服务器端This is code #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;Winsock2.h&amp;gt;  void main() {     //加载套接字库     WORD wVersionRequested;     WSADATA wsaData;     int err;      wVersionRequested = MAKEWO">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-21T00:02:42.281Z">
+<meta property="og:updated_time" content="2018-06-20T23:58:44.409Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多线程编程基础">
-<meta name="twitter:description" content="#include &amp;lt;windows.h&amp;gt; #include &amp;lt;stdio.h&amp;gt;  DWORD WINAPI ThreadProc(LPVOID lpParam) {     printf(&amp;quot;ThreadProc \r\n&amp;quot;);     return 0; }  int main() {     HANDLE hThread = CreateThread(">
+<meta name="twitter:title" content="VC++SOCK编程服务器端代码">
+<meta name="twitter:description" content="Winsock编程服务器端This is code #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;Winsock2.h&amp;gt;  void main() {     //加载套接字库     WORD wVersionRequested;     WSADATA wsaData;     int err;      wVersionRequested = MAKEWO">
 
 
 
@@ -129,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/uncategorized/多线程编程基础/"/>
+  <link rel="canonical" href="http://9cat.top/2018/05/28/sockServer/"/>
 
 
 
 
 
-  <title>多线程编程基础 | Hexo</title>
+  <title>VC++SOCK编程服务器端代码 | Jack Cat</title>
   
 
 
@@ -165,12 +164,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Jack Cat</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">Stay Hungry, Stay Foolish</p>
       
   </div>
 
@@ -193,39 +192,49 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-catalogue">
-          <a href="/catalogues/" rel="section">
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            目录
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -296,16 +305,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/多线程编程基础/">
+    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/05/28/sockServer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="author">
+      <meta itemprop="name" content="water">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/11.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Jack Cat">
     </span>
 
     
@@ -313,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">多线程编程基础</h1>
+          <h1 class="post-title" itemprop="name headline">VC++SOCK编程服务器端代码</h1>
         
 
         <div class="post-meta">
@@ -325,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-20T17:45:55+08:00">
-                2018-06-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T19:58:55+08:00">
+                2018-05-28
               </time>
             
 
@@ -341,7 +350,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-21T08:02:42+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-21T07:58:44+08:00">
                 2018-06-21
               </time>
             
@@ -369,7 +378,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  39
+                  190
                 </span>
               
 
@@ -406,26 +415,65 @@
       
 
       
-        <pre><code>#include &lt;windows.h&gt;
-#include &lt;stdio.h&gt;
+        <h1 id="Winsock编程"><a href="#Winsock编程" class="headerlink" title="Winsock编程"></a>Winsock编程</h1><h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><p><code>This is code</code></p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;Winsock2.h&gt;
 
-DWORD WINAPI ThreadProc(LPVOID lpParam)
+void main()
 {
-    printf(&quot;ThreadProc \r\n&quot;);
-    return 0;
-}
+    //加载套接字库
+    WORD wVersionRequested;
+    WSADATA wsaData;
+    int err;
 
-int main()
-{
-    HANDLE hThread = CreateThread(NULL,0,ThreadProc,NULL,0,NULL);
+    wVersionRequested = MAKEWORD( 1, 1 );
 
-    WaitForSingleObject(hThread, INFINITE);
+    err = WSAStartup( wVersionRequested, &amp;wsaData );
+    if ( err != 0 ) {
 
-    printf(&quot;main \r\n&quot;);
+        return;
+    }
 
-    CloseHandle(hThread);
 
-    return 0;
+    if ( LOBYTE( wsaData.wVersion ) != 1 ||
+          HIBYTE( wsaData.wVersion ) != 1 ) {
+        WSACleanup( );
+        return; 
+
+    }
+    //创建用于监听的套接字
+    SOCKET sockSrv=socket(AF_INET,SOCK_STREAM,0);
+
+    SOCKADDR_IN addrSrv;
+    addrSrv.sin_addr.S_un.S_addr=htonl(INADDR_ANY);
+    addrSrv.sin_family=AF_INET;
+    addrSrv.sin_port=htons(6000);
+
+    //绑定淘套接字
+    bind(sockSrv,(SOCKADDR*)&amp;addrSrv,sizeof(SOCKADDR));
+    //将套接字设置为监听，准备客户请求
+    listen(sockSrv,5);
+
+    SOCKADDR_IN addrClient;
+    int len=sizeof(SOCKADDR);
+
+    while(1)
+    {
+    //等待客户请求到来
+    SOCKET sockConn=accept(sockSrv,(SOCKADDR*)&amp;addrClient,&amp;len);
+    char sendBuf[100];
+    sprintf(sendBuf,&quot;Welcome %s to XXXX&quot;,inet_ntoa(addrClient.sin_addr));
+
+    //发送数据
+    send(sockConn,sendBuf,strlen(sendBuf)+1,0);
+    char recvBuf[100];
+    //接受数据
+    recv(sockConn,recvBuf,100,0);
+    //打印接受的数据
+    printf(&quot;%s\n&quot;,recvBuf);
+    //关闭套接字
+    closesocket(sockConn);
+    }
 }
 </code></pre>
       
@@ -449,11 +497,11 @@ int main()
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
-    author
+    water
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/uncategorized/多线程编程基础/" title="多线程编程基础">http://yoursite.com/uncategorized/多线程编程基础/</a>
+    <a href="http://9cat.top/2018/05/28/sockServer/" title="VC++SOCK编程服务器端代码">http://9cat.top/2018/05/28/sockServer/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -466,12 +514,6 @@ int main()
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/programme/" rel="tag"># programme</a>
-          
-        </div>
-      
 
       
       
@@ -481,8 +523,8 @@ int main()
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/uncategorized/第一个win32汇编程序/" rel="next" title="第一个win32汇编程序">
-                <i class="fa fa-chevron-left"></i> 第一个win32汇编程序
+              <a href="/2018/05/28/sockClient/" rel="next" title="VC++SOCK编程客户器端代码">
+                <i class="fa fa-chevron-left"></i> VC++SOCK编程客户器端代码
               </a>
             
           </div>
@@ -491,8 +533,8 @@ int main()
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/uncategorized/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/12/第一个win32汇编程序/" rel="prev" title="第一个win32汇编程序">
+                第一个win32汇编程序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -571,17 +613,26 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
                 src="/images/11.jpg"
-                alt="author" />
+                alt="water" />
             
-              <p class="site-author-name" itemprop="name">author</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-author-name" itemprop="name">water</p>
+              <p class="site-description motion-element" itemprop="description">银河街角，时光路口</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -589,9 +640,9 @@ var jiathis_config={
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -669,6 +720,22 @@ var jiathis_config={
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Winsock编程"><span class="nav-number">1.</span> <span class="nav-text">Winsock编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端"><span class="nav-number">1.1.</span> <span class="nav-text">服务器端</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -693,7 +760,7 @@ var jiathis_config={
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">author</span>
+  <span class="author" itemprop="copyrightHolder">water</span>
 
   
 </div>
