@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="programme," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,18 +90,17 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021#include &amp;lt;windows.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;DWORD WINAPI ThreadProc(LPVOID lpParam)&amp;#123;	printf(&quot;ThreadProc \r\n&quot;);	return 0;&amp;#125;int main()&amp;#123;	HANDLE hThre">
-<meta name="keywords" content="programme">
+<meta name="description" content="vim命令行模式，插入模式，末行模式命令模式，不能输入字符移动命令：j        向下移动光标k        向上移动光标h        向左移动光标l        向右移动光标gg         文件顶部G          文件末尾数字gg 移动到数字对应行数字G  移动到数字对应行[        移动到段落首]        移动到段落尾 Ctrl+b  向上翻页Ctrl+f">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多线程编程基础">
-<meta property="og:url" content="http://9cat.top/2018/06/20/多线程编程基础/index.html">
+<meta property="og:title" content="vim">
+<meta property="og:url" content="http://9cat.top/2018/06/24/vim/index.html">
 <meta property="og:site_name" content="Jack Cat">
-<meta property="og:description" content="123456789101112131415161718192021#include &amp;lt;windows.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;DWORD WINAPI ThreadProc(LPVOID lpParam)&amp;#123;	printf(&quot;ThreadProc \r\n&quot;);	return 0;&amp;#125;int main()&amp;#123;	HANDLE hThre">
+<meta property="og:description" content="vim命令行模式，插入模式，末行模式命令模式，不能输入字符移动命令：j        向下移动光标k        向上移动光标h        向左移动光标l        向右移动光标gg         文件顶部G          文件末尾数字gg 移动到数字对应行数字G  移动到数字对应行[        移动到段落首]        移动到段落尾 Ctrl+b  向上翻页Ctrl+f">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-24T10:20:23.577Z">
+<meta property="og:updated_time" content="2018-06-24T09:33:48.185Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多线程编程基础">
-<meta name="twitter:description" content="123456789101112131415161718192021#include &amp;lt;windows.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;DWORD WINAPI ThreadProc(LPVOID lpParam)&amp;#123;	printf(&quot;ThreadProc \r\n&quot;);	return 0;&amp;#125;int main()&amp;#123;	HANDLE hThre">
+<meta name="twitter:title" content="vim">
+<meta name="twitter:description" content="vim命令行模式，插入模式，末行模式命令模式，不能输入字符移动命令：j        向下移动光标k        向上移动光标h        向左移动光标l        向右移动光标gg         文件顶部G          文件末尾数字gg 移动到数字对应行数字G  移动到数字对应行[        移动到段落首]        移动到段落尾 Ctrl+b  向上翻页Ctrl+f">
 
 
 
@@ -131,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://9cat.top/2018/06/20/多线程编程基础/"/>
+  <link rel="canonical" href="http://9cat.top/2018/06/24/vim/"/>
 
 
 
 
 
-  <title>多线程编程基础 | Jack Cat</title>
+  <title>vim | Jack Cat</title>
   
 
 
@@ -303,12 +302,12 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/06/20/多线程编程基础/">
+    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/06/24/vim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="water">
@@ -325,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">多线程编程基础</h1>
+          <h1 class="post-title" itemprop="name headline">vim</h1>
         
 
         <div class="post-meta">
@@ -337,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-20T17:45:55+08:00">
-                2018-06-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T17:28:46+08:00">
+                2018-06-24
               </time>
             
 
@@ -353,7 +352,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-24T18:20:23+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-24T17:33:48+08:00">
                 2018-06-24
               </time>
             
@@ -381,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  60
+                  275
                 </span>
               
 
@@ -418,7 +417,13 @@
       
 
       
-        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ThreadProc</span><span class="params">(LPVOID lpParam)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"ThreadProc \r\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	HANDLE hThread = CreateThread(<span class="literal">NULL</span>,<span class="number">0</span>,ThreadProc,<span class="literal">NULL</span>,<span class="number">0</span>,<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">	WaitForSingleObject(hThread, INFINITE);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"main \r\n"</span>);</span><br><span class="line"></span><br><span class="line">	CloseHandle(hThread);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>vim<br>命令行模式，插入模式，末行模式<br>命令模式，不能输入字符<br><code>移动命令：</code><br>j        向下移动光标<br>k        向上移动光标<br>h        向左移动光标<br>l        向右移动光标<br>gg         文件顶部<br>G          文件末尾<br>数字gg 移动到数字对应行<br>数字G  移动到数字对应行<br>[        移动到段落首<br>]        移动到段落尾</p>
+<p>Ctrl+b  向上翻页<br>Ctrl+f  向下翻页<br>H         屏幕顶部<br>M         屏幕中间<br>L         屏幕顶部</p>
+<p>按i进入插入模式，可输入任意字符<br>按ESC退出插入模式<br>按：进入末行模式</p>
+<p><code>撤销和取消撤销</code><br>u     ctrl+r</p>
+<p><code>删除</code><br>x<br>n+x （n为数字）    删除N个字符<br>dd              删除光标所在行<br>D               一直删除至行尾<br>dw              删除选中之后直到空格<br>d+数字G          删除选中行到指定行</p>
+<p><code>可视模式</code><br>按v：可视模式，可选中代码<br>按V：行<br>Ctrl+v：块<br>（可结合移动命令，例如：v+gg）</p>
+<p>复制粘贴命令：<br>yy:复制整行代码<br>p:粘贴<br>yy19p  复制19行</p>
 
       
     </div>
@@ -428,6 +433,38 @@
 	<div>
       
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS�� sweetalert ���޸�·�� -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>���ı���:</span>vim</a></p>
+  <p><span>��������:</span>water</a></p>
+  <p><span>����ʱ��:</span>2018��06��24�� - 17:28:46</p>
+  <p><span>������:</span>2018��06��24�� - 17:33:48</p>
+  <p><span>ԭʼ����:</span><a href="/2018/06/24/vim/" title="vim">http://9cat.top/2018/06/24/vim/</a>
+    <span class="copy-path"  title="���������������"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/06/24/vim/"  aria-label="���Ƴɹ���"></i></span>
+  </p>
+  <p><span>���Э��:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">����-����ҵ��ʹ��-��ֹ���� 4.0 ����</a> ת���뱣��ԭ�����Ӽ����ߡ�</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '���Ƴɹ�',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
 
 
       
@@ -435,6 +472,38 @@
 	<div>
 	
 	  
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS�� sweetalert ���޸�·�� -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>���ı���:</span>vim</a></p>
+  <p><span>��������:</span>water</a></p>
+  <p><span>����ʱ��:</span>2018��06��24�� - 17:28:46</p>
+  <p><span>������:</span>2018��06��24�� - 17:33:48</p>
+  <p><span>ԭʼ����:</span><a href="/2018/06/24/vim/" title="vim">http://9cat.top/2018/06/24/vim/</a>
+    <span class="copy-path"  title="���������������"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/06/24/vim/"  aria-label="���Ƴɹ���"></i></span>
+  </p>
+  <p><span>���Э��:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">����-����ҵ��ʹ��-��ֹ���� 4.0 ����</a> ת���뱣��ԭ�����Ӽ����ߡ�</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '���Ƴɹ�',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
 
 
 	
@@ -452,7 +521,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://9cat.top/2018/06/20/多线程编程基础/" title="多线程编程基础">http://9cat.top/2018/06/20/多线程编程基础/</a>
+    <a href="http://9cat.top/2018/06/24/vim/" title="vim">http://9cat.top/2018/06/24/vim/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -479,12 +548,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/programme/" rel="tag"># programme</a>
-          
-        </div>
-      
 
       
       
@@ -494,8 +557,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/12/第一个win32汇编程序/" rel="next" title="第一个win32汇编程序">
-                <i class="fa fa-chevron-left"></i> 第一个win32汇编程序
+              <a href="/2018/06/20/多线程编程基础/" rel="next" title="多线程编程基础">
+                <i class="fa fa-chevron-left"></i> 多线程编程基础
               </a>
             
           </div>
@@ -504,8 +567,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/24/vim/" rel="prev" title="vim">
-                vim <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/24/IP/" rel="prev" title="TCP/IP调试工具">
+                TCP/IP调试工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
