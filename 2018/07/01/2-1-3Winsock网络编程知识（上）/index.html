@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Winsock," />
 
 
 
@@ -90,17 +90,18 @@
 
 
 
-<meta name="description" content="dos下的一些命令netstat -s -p tcp/udp/icmp/ip   ping -l 65500 -t 192.168.1.1  #死亡之ping   for /L %i IN (1,1,254) DO ping -w 2 -n 1 192.168.1.%i  #批处理ping   for /L %i IN (1,1,254) DO ping -w 2 -n 1 192.168.2.%">
+<meta name="description" content="1.Winsock的初始化与释放在使用winsock相关函数时需要对Winsock库进行初始化，而在使用完后需要对Winsock库进行释放。 Winsock库的初始化函数的定义如下：1int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData); 该函数的第1个参数wVersionRequested是需要初始化的Winsock库的版本号，W">
+<meta name="keywords" content="Winsock">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TCP&#x2F;IP调试工具">
-<meta property="og:url" content="http://9cat.top/2018/06/24/IP/index.html">
+<meta property="og:title" content="2.1.3Winsock网络编程知识（上）">
+<meta property="og:url" content="http://9cat.top/2018/07/01/2-1-3Winsock网络编程知识（上）/index.html">
 <meta property="og:site_name" content="Jack Cat">
-<meta property="og:description" content="dos下的一些命令netstat -s -p tcp/udp/icmp/ip   ping -l 65500 -t 192.168.1.1  #死亡之ping   for /L %i IN (1,1,254) DO ping -w 2 -n 1 192.168.1.%i  #批处理ping   for /L %i IN (1,1,254) DO ping -w 2 -n 1 192.168.2.%">
+<meta property="og:description" content="1.Winsock的初始化与释放在使用winsock相关函数时需要对Winsock库进行初始化，而在使用完后需要对Winsock库进行释放。 Winsock库的初始化函数的定义如下：1int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData); 该函数的第1个参数wVersionRequested是需要初始化的Winsock库的版本号，W">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-24T13:34:06.992Z">
+<meta property="og:updated_time" content="2018-07-01T07:25:57.738Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TCP&#x2F;IP调试工具">
-<meta name="twitter:description" content="dos下的一些命令netstat -s -p tcp/udp/icmp/ip   ping -l 65500 -t 192.168.1.1  #死亡之ping   for /L %i IN (1,1,254) DO ping -w 2 -n 1 192.168.1.%i  #批处理ping   for /L %i IN (1,1,254) DO ping -w 2 -n 1 192.168.2.%">
+<meta name="twitter:title" content="2.1.3Winsock网络编程知识（上）">
+<meta name="twitter:description" content="1.Winsock的初始化与释放在使用winsock相关函数时需要对Winsock库进行初始化，而在使用完后需要对Winsock库进行释放。 Winsock库的初始化函数的定义如下：1int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData); 该函数的第1个参数wVersionRequested是需要初始化的Winsock库的版本号，W">
 
 
 
@@ -130,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://9cat.top/2018/06/24/IP/"/>
+  <link rel="canonical" href="http://9cat.top/2018/07/01/2-1-3Winsock网络编程知识（上）/"/>
 
 
 
 
 
-  <title>TCP/IP调试工具 | Jack Cat</title>
+  <title>2.1.3Winsock网络编程知识（上） | Jack Cat</title>
   
 
 
@@ -302,12 +303,12 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/06/24/IP/">
+    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/07/01/2-1-3Winsock网络编程知识（上）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="water">
@@ -324,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">TCP/IP调试工具</h1>
+          <h1 class="post-title" itemprop="name headline">2.1.3Winsock网络编程知识（上）</h1>
         
 
         <div class="post-meta">
@@ -336,8 +337,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T19:58:55+08:00">
-                2018-06-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-01T13:39:48+08:00">
+                2018-07-01
               </time>
             
 
@@ -352,12 +353,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-24T21:34:06+08:00">
-                2018-06-24
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-01T15:25:57+08:00">
+                2018-07-01
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络编程/" itemprop="url" rel="index">
+                    <span itemprop="name">网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -380,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  122
+                  1,325
                 </span>
               
 
@@ -396,7 +419,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -417,16 +440,20 @@
       
 
       
-        <h1 id="dos下的一些命令"><a href="#dos下的一些命令" class="headerlink" title="dos下的一些命令"></a>dos下的一些命令</h1><p>netstat -s -p tcp/udp/icmp/ip  </p>
-<p>ping -l 65500 -t 192.168.1.1  #死亡之ping  </p>
-<p>for /L %i IN (1,1,254) DO ping -w 2 -n 1 192.168.1.%i  #批处理ping  </p>
-<p>for /L %i IN (1,1,254) DO ping -w 2 -n 1 192.168.2.%i  </p>
-<p>nbtstat -a 192.168.1.106   探测主机名  </p>
-<p>add portopening protocol =all port=135 name=关闭135端口 mode=enable SCOP=Subnet  </p>
-<p>netsh advfirewall firewall  </p>
-<p>add portopening protocol =tcp port=55555 name重要服务 mode=enable  </p>
-<p>delete portopening protocol =tcp port=55555 interface=重要服务  </p>
-<p>delete portopening TCP 135</p>
+        <h2 id="1-Winsock的初始化与释放"><a href="#1-Winsock的初始化与释放" class="headerlink" title="1.Winsock的初始化与释放"></a>1.Winsock的初始化与释放</h2><p>在使用winsock相关函数时需要对Winsock库进行初始化，而在使用完后需要对Winsock库进行释放。</p>
+<h3 id="Winsock库的初始化函数的定义如下："><a href="#Winsock库的初始化函数的定义如下：" class="headerlink" title="Winsock库的初始化函数的定义如下："></a>Winsock库的初始化函数的定义如下：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">WSAStartup</span><span class="params">(WORD wVersionRequested, LPWSADATA lpWSAData)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>该函数的第1个参数wVersionRequested是需要初始化的Winsock库的版本号，Winsock库有多个版本号，目前常用的版本是2.2.第二个参数<code>lpWSAData</code>是一个指向WSADATA的指针。该函数的返回值为0，说明该函数调用成功。如果调用失败，则返回其他值。在程序的开始处调用该初始化函数，在程序中就可以使用Winsock相关的所有API函数。</p>
+<h3 id="Winsock库的释放函数的定义"><a href="#Winsock库的释放函数的定义" class="headerlink" title="Winsock库的释放函数的定义"></a>Winsock库的释放函数的定义</h3><p>int WSACleanup(void);<br>该函数没有参数，在程序的结束处直接调用该函数，即可释放Winsock库。</p>
+<h2 id="2-套接字的创建与关闭"><a href="#2-套接字的创建与关闭" class="headerlink" title="2.套接字的创建与关闭"></a>2.套接字的创建与关闭</h2><p>套接字用于根据指定的<code>协议类型</code>来分配一个<code>套接字描述符</code>。该描述符主要用在客户端和服务器端进行通信，当套接字使用完毕时应该关闭套接字以释放资源。创建套接字与关闭套接字的函数为socket()和closesocket()。</p>
+<h3 id="创建套接字的函数定义如下："><a href="#创建套接字的函数定义如下：" class="headerlink" title="创建套接字的函数定义如下："></a>创建套接字的函数定义如下：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SOCKET <span class="title">socket</span><span class="params">(<span class="keyword">int</span> af,<span class="keyword">int</span> type, <span class="keyword">int</span> protocol)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>socket()函数共有3个参数，第1个参数af用来指定地址族，在Windows下可以使用的参数有很多个，但是真正可以使用的只有两个，分别说AF_INET和PF_INET。这两个宏在Winsock2.h下的定义相同，分别如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> AF_INET		2		<span class="comment">/* internetwork:UDP, TCP, etc. */</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*	Protocol families,same as address families for now</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PF_INEF		AF_INEF</span></span><br></pre></td></tr></table></figure></p>
+<p>以上两个定义都摘自Winsock2.h头文件。从定义来看，PF_INEF和AF_INEF是相同的。看PF_INEF宏定义上面的注释，AF表示地址族（Address Family）,而PF表示协议族（Protocol Family）。对于Windows来说，<code>两者相同</code>；对于Unix/Linux来说，两者是<code>不同的</code>。一般情况下，调用socket()函数时应使用<code>PF_INEF</code>，而在设置地址时使用<code>AF_INEF</code>。<br>sock()函数的第2个参数type是指定新套接字描述符的类型。这里可以使用的值通常有3个，分别是SOCK_STREAM、SOCK_DGRAM和SOCK_RAW，分别表示流套接字、数据包套接字和原始协议接口。<br>socket()函数的第3个参数Protocol用来指定程序所使用的通信协议，这里可以选择使用IPPROTO_TCP、IPPROTO_UDP、IPPROTO_ICMP等协议，这个参数的值是根据<code>第2个参数</code>的值进行选择。第2个参数如果使用<code>SOCK_STREAM</code>，那么第3个参数应该使用<code>IPPROTO_TCP</code>；如果第2个参数使用SOCK_DGRAM，那么第3个参数应该使用IPPROTO_UDP。也就是说，如果第2个参数是SOCK_STREAM或SOCK_DGRAM，那么第3个参数可以默认为0.如果第2个参数指定的是SOCK_RAW，那么第3个参数必须指定，而不能使用0值。<br>socket()函数调用成功返回值为一个新的套接字描述符，如果调用失败，则返回INVALID_SOCKET。调用失败后，想要知道原因，那么紧接着调用WSAGetLastError()函数得到错误码。<br>PS：所有的Winsock函数出错后都可以调用WSAGetLastError()得到错误码。</p>
+<h3 id="关闭套接字的函数定义如下："><a href="#关闭套接字的函数定义如下：" class="headerlink" title="关闭套接字的函数定义如下："></a>关闭套接字的函数定义如下：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">closesocket</span><span class="params">(SOCKET s)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>closesocket()函数是socket()函数创建的套接字描述符。<br>PS：对于WSAStartup()/WSACleanup()和socket()/closesocket()这样的函数，最好保持成对出现。也就是说，在写完一个函数时，立刻写出另外一个函数的调用，以免忘记资源的释放。</p>
+<h2 id="3-面向连接协议的函数"><a href="#3-面向连接协议的函数" class="headerlink" title="3.面向连接协议的函数"></a>3.面向连接协议的函数</h2><p>前面的部分提到了面向连接协议与非面向连接协议所用到的函数是不相同的。这里来介绍面向连接的函数：bind()、listen()、accept()、send()和recv()。这些函数是常用的<code>面向连接的函数</code>，只是一个基础。Winsock库的函数非常多，这里只是寥寥几个而已，下面介绍函数的使用方法。<br>通过socket()函数可以直接创建一个新的套接字描述符，但是它只是一个描述符，为网络的一些资源做准备。要想真正在网络上进行通信，需要<code>本地的地址</code>与<code>本地的端口号信息</code>。当然，本地的地址与端口号信息需要和套接字描述符进行关联，进行绑定。在Winsock函数中，使用bind()函数完成套接字与地址端口信息的绑定。bind()函数的定义如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bind</span>(<span class="params">SOCKET s, <span class="keyword">const</span> <span class="keyword">struct</span> sockaddr FAR *name, <span class="keyword">int</span> namelen</span>)</span>;</span><br></pre></td></tr></table></figure></p>
+<p>该函数有3个参数，第1个参数s是新创建的套接字描述符，也就是用socket()函数创建的描述符，第2个参数name是一个sockaddr的结构体，提供套接字一个地址和端口信息，第3个参数namelen是sockaddr结构体的大小。<br>其中第二个参数sockaddr结构体的定义如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sockaddr</span>&#123;</span></span><br><span class="line">	u_short sa_family；   <span class="comment">/* address family */</span></span><br><span class="line">	<span class="keyword">char</span>    sa_data[<span class="number">14</span>];  <span class="comment">/* up to 14 bytes of direct address */</span></span><br><span class="line">&#125;；</span><br></pre></td></tr></table></figure></p>
+<p>该结构体共有16个字节，在该结构体之前所使用的协议为sockadd_in，该结构体的定义如下:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sockadd_in</span>&#123;</span></span><br><span class="line"><span class="keyword">short</span> sin_family;</span><br><span class="line">u_short sin_port;</span><br><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">in_add</span> <span class="title">sin_addr</span>;</span></span><br><span class="line"><span class="keyword">char</span>	sin_size[<span class="number">8</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>！未完待续！</p>
 
       
     </div>
@@ -437,6 +464,38 @@
 	<div>
 	
 	  
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>2.1.3Winsock网络编程知识（上）</a></p>
+  <p><span>文章作者:</span>water</a></p>
+  <p><span>发布时间:</span>2018年07月01日 - 13:39:48</p>
+  <p><span>最后更新:</span>2018年07月01日 - 15:25:57</p>
+  <p><span>原始链接:</span><a href="/2018/07/01/2-1-3Winsock网络编程知识（上）/" title="2.1.3Winsock网络编程知识（上）">http://9cat.top/2018/07/01/2-1-3Winsock网络编程知识（上）/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/01/2-1-3Winsock网络编程知识（上）/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
 
 
 	
@@ -464,6 +523,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Winsock/" rel="tag"># Winsock</a>
+          
+        </div>
+      
 
       
       
@@ -473,8 +538,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/24/vim/" rel="next" title="vim">
-                <i class="fa fa-chevron-left"></i> vim
+              <a href="/2018/07/01/2-1-2面向与非面连接协议所使用的函数/" rel="next" title="2.1.2面向与非面连接协议所使用的函数">
+                <i class="fa fa-chevron-left"></i> 2.1.2面向与非面连接协议所使用的函数
               </a>
             
           </div>
@@ -482,10 +547,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/01/大O记法/" rel="prev" title="大O记法">
-                大O记法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -682,7 +743,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#dos下的一些命令"><span class="nav-number">1.</span> <span class="nav-text">dos下的一些命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Winsock的初始化与释放"><span class="nav-number">1.</span> <span class="nav-text">1.Winsock的初始化与释放</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Winsock库的初始化函数的定义如下："><span class="nav-number">1.1.</span> <span class="nav-text">Winsock库的初始化函数的定义如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Winsock库的释放函数的定义"><span class="nav-number">1.2.</span> <span class="nav-text">Winsock库的释放函数的定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-套接字的创建与关闭"><span class="nav-number">2.</span> <span class="nav-text">2.套接字的创建与关闭</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建套接字的函数定义如下："><span class="nav-number">2.1.</span> <span class="nav-text">创建套接字的函数定义如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭套接字的函数定义如下："><span class="nav-number">2.2.</span> <span class="nav-text">关闭套接字的函数定义如下：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-面向连接协议的函数"><span class="nav-number">3.</span> <span class="nav-text">3.面向连接协议的函数</span></a></li></ol></div>
             
 
           </div>
