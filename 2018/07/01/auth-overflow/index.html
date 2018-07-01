@@ -90,16 +90,23 @@
 
 
 
-<meta name="description" content="银河街角，时光路口">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jack Cat">
-<meta property="og:url" content="http://9cat.top/archives/2018/05/index.html">
+<meta name="description" content="缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操">
+<meta property="og:type" content="article">
+<meta property="og:title" content="缓冲区溢出练习">
+<meta property="og:url" content="http://9cat.top/2018/07/01/auth-overflow/index.html">
 <meta property="og:site_name" content="Jack Cat">
-<meta property="og:description" content="银河街角，时光路口">
+<meta property="og:description" content="缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow.png">
+<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow2.png">
+<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow3.png">
+<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow4.png">
+<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow5.png">
+<meta property="og:updated_time" content="2018-07-01T14:52:52.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jack Cat">
-<meta name="twitter:description" content="银河街角，时光路口">
+<meta name="twitter:title" content="缓冲区溢出练习">
+<meta name="twitter:description" content="缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操">
+<meta name="twitter:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow.png">
 
 
 
@@ -129,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://9cat.top/archives/2018/05/"/>
+  <link rel="canonical" href="http://9cat.top/2018/07/01/auth-overflow/"/>
 
 
 
 
 
-  <title>归档 | Jack Cat</title>
+  <title>缓冲区溢出练习 | Jack Cat</title>
   
 
 
@@ -154,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,74 +299,287 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/07/01/auth-overflow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="water">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/11.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jack Cat">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">缓冲区溢出练习</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-01T21:54:52+08:00">
+                2018-07-01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-01T22:52:52+08:00">
+                2018-07-01
+              </time>
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 13 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/溢出/" itemprop="url" rel="index">
+                    <span itemprop="name">溢出</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  947
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
-        
-        
-        
+      
+        <p>缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。<br>尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操作很可能导致程序崩溃。这称为<code>缓冲区超限(buffer overrun)</code>或缓冲区溢出，由于多出的2个字节数据会溢出，存储在已分配的存储空间之外，因此会重写已分配存储空间之后的数据。如果重写的是一段关键数据，程序会崩溃。<br>通过破坏内存来控制执行流程。程序auth_overflow.c演示了这个概念。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check_authentication</span><span class="params">(<span class="keyword">char</span> *password)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> auth_flag = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> password_buffer[<span class="number">16</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">strcpy</span>(password_buffer,password);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strcmp</span>(password_buffer,<span class="string">"brillig"</span>)==<span class="number">0</span>)</span><br><span class="line">	auth_flag = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strcmp</span>(password_buffer,<span class="string">"outgrabe"</span>)==<span class="number">0</span>)</span><br><span class="line">	auth_flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> auth_flag;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(argc&lt;<span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Usage:%s&lt;password&gt;\n"</span>,argv[<span class="number">0</span>]);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(check_authentication(argv[<span class="number">1</span>]))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n-=-=-=-=-=-=-=-=\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Access Granted.\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n-=-=-=-=-=-=-=-=\n"</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\nAccess Denied.\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个示例程序接受一个密码作为它唯一的命令行参数，然后调用函数check_authentication()。这个函数允许<code>两个密码</code>，意味着它允许多重验证方法。如果使用网络两个密码中的一个，函数会返回1，这样会授予访问权限。在编译代码前，通过查看源代码，您应该能够推测出它的大部分功能。但在程序时，请使用-g选项，因为随后会对其进行调试。<br><img src="overflow.png" alt=""><br>您也许早就推测出会发生什么，但让我们使用调试工具对它进行检查以查看其细节。<br><img src="overflow2.png" alt=""><br>使用-q选项会使得GDB调试工具取消欢迎标语，并在第10行和第17行设置了断点。程序运行时，会在断点处暂停并为我们提供一个检查内存的机会。<br><img src="overflow3.png" alt=""><br>第1个断点在strcpy()发生之前。通过检查password——buffer指针，调试工具显示它填充的是随机的未初始化的数据，位于内存中0xbffff5ec处。通过检查auth_flag变量的地址，我们可以看到他的存储位置0xbffff5fc和它的值0。可以使用打印命令做算术运算，它显示auth_flag位于password_buffer开始之后的16字节处。也可以在以password_buffer开始的一块内存中看到这种关系。<br><img src="overflow4.png" alt=""><br>继续运行到strcpy()之后的第2个断点，再次对这些存储单元进行检查。password_buffer溢出到auth_flag中，将它的前两个字节变为0x41。值0x00004141可能看起来是颠倒的，但是要记住x86采用的是小端存储方式。如果单独检查每个4字节单元，就可以看到内存实际上是如何排列的。最终，程序会将这个值看做一个整数，其值为1094795585。<br><img src="overflow5.png" alt=""><br>溢出之后，函数check_authentication()会返回1094795585，而不是0.因为if语句认为任何非0值都能通过验证，所以程序执行流程进入授权部分。在这个列子中，变量auth_flag是<code>执行控制点</code>，因此覆盖该值是实现控制的根源。</p>
 
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+      
+    </div>
+    
+    
+    
 
-        
+	<div>
+	
+	  
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  <p><span>本文标题:</span>缓冲区溢出练习</a></p>
+  <p><span>文章作者:</span>water</a></p>
+  <p><span>发布时间:</span>2018年07月01日 - 21:54:52</p>
+  <p><span>最后更新:</span>2018年07月01日 - 22:52:52</p>
+  <p><span>原始链接:</span><a href="/2018/07/01/auth-overflow/" title="缓冲区溢出练习">http://9cat.top/2018/07/01/auth-overflow/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/01/auth-overflow/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/28/删除所有分区共享/" itemprop="url">
-              
-                <span itemprop="name">删除所有分区共享批处理</span>
-              
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-28T19:58:55+08:00"
-              content="2018-05-28" >
-          05-28
-        </time>
+
+	
+	</div>
+      
+    
+
+    
+
+    
+
+      <div>
+	
+	  <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+
+
+	
       </div>
 
-    </header>
-  </article>
 
 
-
+    <footer class="post-footer">
       
 
-    </div>
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/01/一位程序员的十年总结/" rel="next" title="一位程序员的十年总结(转载)">
+                <i class="fa fa-chevron-left"></i> 一位程序员的十年总结(转载)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -367,6 +587,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -632,6 +856,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
