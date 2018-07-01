@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://9cat.top/"/>
-  <updated>2018-07-01T04:53:58.822Z</updated>
+  <updated>2018-07-01T05:34:25.436Z</updated>
   <id>http://9cat.top/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2.1.2面向与非面连接协议所使用的函数</title>
+    <link href="http://9cat.top/2018/07/01/2-1-2%E9%9D%A2%E5%90%91%E4%B8%8E%E9%9D%9E%E9%9D%A2%E8%BF%9E%E6%8E%A5%E5%8D%8F%E8%AE%AE%E6%89%80%E4%BD%BF%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0/"/>
+    <id>http://9cat.top/2018/07/01/2-1-2面向与非面连接协议所使用的函数/</id>
+    <published>2018-07-01T05:14:08.000Z</published>
+    <updated>2018-07-01T05:34:25.436Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-面向连接的协议"><a href="#1-面向连接的协议" class="headerlink" title="1.面向连接的协议"></a>1.面向连接的协议</h2><p>在面向连接的协议中，两台计算机之间在进行数据收发前，必须先在两者之间建立一个<code>通信通道</code>，以确保两台计算机之间存在一条路径可以相互沟通。在数据传输完毕之后，切断这条通信通道。该种方式相当于打电话。<br>面向连接的协议使用的是TCP协议，服务器与客户端建立通信信道所需要的基本Winsock函数如下：</p><h3 id="服务器端函数："><a href="#服务器端函数：" class="headerlink" title="服务器端函数："></a>服务器端函数：</h3><p>socket()-&gt;bind-&gt;listen()-&gt;accept()-&gt;send()/recv()-&gt;closesocket()</p><h3 id="客户端函数："><a href="#客户端函数：" class="headerlink" title="客户端函数："></a>客户端函数：</h3><p>socket()-&gt;connet()-&gt;send()/recv()-&gt;closesocket()</p><h2 id="2-非面向连接的协议"><a href="#2-非面向连接的协议" class="headerlink" title="2.非面向连接的协议"></a>2.非面向连接的协议</h2><p>在非面向连接的协议中，发送端只要直接将要发送的数据传出即可，不需要理会接送方是否能够接收到数据。而接受端在接受数据时，也不会响应消息通知发送给发送端。该种方式相当于写信，将写好的信放到信箱中，但是却不能保证收信人真的能够收到这封信。<br>非面向连接使用的是UDP协议，服务器与客户端通信所需要的基本Winsock函数如下：</p><h3 id="服务器端函数：-1"><a href="#服务器端函数：-1" class="headerlink" title="服务器端函数："></a>服务器端函数：</h3><p>socket()-&gt;bind-&gt;sendto()/recvfrom()-&gt;closesocket()</p><h3 id="客户端函数：-1"><a href="#客户端函数：-1" class="headerlink" title="客户端函数："></a>客户端函数：</h3><p>socket()-&gt;sendto()/recvfrom()-&gt;closesocket()</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+      <category term="网络编程" scheme="http://9cat.top/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数" scheme="http://9cat.top/tags/%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>网络基础知识</title>
-    <link href="http://9cat.top/2018/07/01/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://9cat.top/2018/07/01/网络基础知识/</id>
+    <link href="http://9cat.top/2018/07/01/2.1.1%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://9cat.top/2018/07/01/2.1.1网络基础知识/</id>
     <published>2018-07-01T03:55:42.000Z</published>
-    <updated>2018-07-01T04:53:58.822Z</updated>
+    <updated>2018-07-01T04:56:56.606Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>各种计算机之间通过互联网进行通信主要依靠TCP/IP协议。该协议分为4层，由上到下分别为<code>应用层、传输层、网际层和链路层</code>。<br>TCP/IP协议总是下层为上层协议服务，下层协议的细节对上层协议来说是透明的。TCP/IP协议在每层协议中都定义了非常多的不同的协议，<br>比如网际层的ICMP协议、IGMP协议，传输层的TCP协议、UDP协议等。<br>在众多协议中，最具有代表性的是TCP/IP协议。</p><p>IP协议是“Internet Protocol”的简称，它是计算机网络相互连接进行通信而设计的协议。在IP协议中最重要的就是<code>IP地址</code>，IP地址是用来在网络上唯一标识一台计算机主机的地址。<br>互联网中没有两个<code>机器</code>有相同的IP地址，因此它是用来标识一台网络主机的。所有的IP地址都是32位长，它用点分十进制表示，比如“10.10.30.16”。<br>IP地址指定的不是主机，而是<code>网络接口设备</code>。因此，一台主机有两个网络接口，那么就会有两个IP地址。通常情况下，对于一台普通主机只有一个网络接口设备，也就只有一个IP地址。比如：个人使用的PC通常只有一个IP地址；<br>而对于服务器来说，则会有多个网络接口设备，每个网络接口设备都有一个IP地址，比如WEB服务器可能就会有多个IP地址。</p><p>IP地址被分为5类，分别是A类、B类、C类、D类和E类。各类IP地址范围如下所示。<br><img src="IP.png" alt=""></p><p>传输层有两大协议，分别是TCP协议和UDP协议。<br>TCP协议是“Transmission Control Protocol”的简称，其意思是传输层控制协议。TCP协议是一种面向连接的、可靠的通信协议。TCP协议是IP协议的上层协议，IP协议服务于TCP协议。<br>UDP协议是“User Datagram Protocol”的简称，其意思为用户包协议。UDP协议是一种<code>无连接</code>的传输层协议，提供面向事务的简单<code>不可靠</code>信息传送服务。<br>传输层是为应用层提供服务的，应用层的协议一部分是基于TCP协议的，比如FTP、HTTP。而一部分是基于UDP的，比如DNS协议。IP层提供了<code>IP地址</code>用来标识网络主机，而传输层提供<code>端口</code>来标识主机中的进程。确定了IP地址和端口号，就确定了网络上的主机以主机上通信的进程。<br>传输层提供了标识通信进程的端口号。按照协议划分，端口号分为TCP端口和UDP端口，TCP端口和UDP端口各有65536个。对于应用程序而言，一般使用大于<code>1024</code>的端口号，因为小于1024的端口属于保留端口。Internet上的很多服务都是用小于1024的端口号。为避免冲突，程序员自己编写的应用程序不要使用小于1024的端口号。同一协议的端口不能冲突，比如Web服务器占用主机TCP协议的80端口，那么另外的程序就不可以再使用TCP协议的80端口。<br>常见的端口号如下图所示。<br><img src="port_number.png" alt=""><br>除了小于1024端口号外，还有一些比较有名的端口号，比如MY SQL Server的端口号是1433，Windows的远程桌面端口号是3389等。程序员在编写自己的网络应用程序时，要避免与这些常用端口冲突。</p>]]></content>
     
@@ -33,6 +58,8 @@
       
     
     </summary>
+    
+      <category term="网络编程" scheme="http://9cat.top/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
     
       <category term="网络编程" scheme="http://9cat.top/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
