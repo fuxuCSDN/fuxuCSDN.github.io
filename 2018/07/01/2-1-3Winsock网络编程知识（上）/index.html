@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Jack Cat">
 <meta property="og:description" content="1.Winsock的初始化与释放在使用winsock相关函数时需要对Winsock库进行初始化，而在使用完后需要对Winsock库进行释放。 Winsock库的初始化函数的定义如下：1int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData); 该函数的第1个参数wVersionRequested是需要初始化的Winsock库的版本号，W">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-01T07:25:57.738Z">
+<meta property="og:updated_time" content="2018-07-02T05:19:21.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2.1.3Winsock网络编程知识（上）">
 <meta name="twitter:description" content="1.Winsock的初始化与释放在使用winsock相关函数时需要对Winsock库进行初始化，而在使用完后需要对Winsock库进行释放。 Winsock库的初始化函数的定义如下：1int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData); 该函数的第1个参数wVersionRequested是需要初始化的Winsock库的版本号，W">
@@ -353,8 +353,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-01T15:25:57+08:00">
-                2018-07-01
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-02T13:19:21+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -446,8 +446,8 @@
 <h3 id="Winsock库的释放函数的定义"><a href="#Winsock库的释放函数的定义" class="headerlink" title="Winsock库的释放函数的定义"></a>Winsock库的释放函数的定义</h3><p>int WSACleanup(void);<br>该函数没有参数，在程序的结束处直接调用该函数，即可释放Winsock库。</p>
 <h2 id="2-套接字的创建与关闭"><a href="#2-套接字的创建与关闭" class="headerlink" title="2.套接字的创建与关闭"></a>2.套接字的创建与关闭</h2><p>套接字用于根据指定的<code>协议类型</code>来分配一个<code>套接字描述符</code>。该描述符主要用在客户端和服务器端进行通信，当套接字使用完毕时应该关闭套接字以释放资源。创建套接字与关闭套接字的函数为socket()和closesocket()。</p>
 <h3 id="创建套接字的函数定义如下："><a href="#创建套接字的函数定义如下：" class="headerlink" title="创建套接字的函数定义如下："></a>创建套接字的函数定义如下：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SOCKET <span class="title">socket</span><span class="params">(<span class="keyword">int</span> af,<span class="keyword">int</span> type, <span class="keyword">int</span> protocol)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>socket()函数共有3个参数，第1个参数af用来指定地址族，在Windows下可以使用的参数有很多个，但是真正可以使用的只有两个，分别说AF_INET和PF_INET。这两个宏在Winsock2.h下的定义相同，分别如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> AF_INET		2		<span class="comment">/* internetwork:UDP, TCP, etc. */</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*	Protocol families,same as address families for now</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PF_INEF		AF_INEF</span></span><br></pre></td></tr></table></figure></p>
-<p>以上两个定义都摘自Winsock2.h头文件。从定义来看，PF_INEF和AF_INEF是相同的。看PF_INEF宏定义上面的注释，AF表示地址族（Address Family）,而PF表示协议族（Protocol Family）。对于Windows来说，<code>两者相同</code>；对于Unix/Linux来说，两者是<code>不同的</code>。一般情况下，调用socket()函数时应使用<code>PF_INEF</code>，而在设置地址时使用<code>AF_INEF</code>。<br>sock()函数的第2个参数type是指定新套接字描述符的类型。这里可以使用的值通常有3个，分别是SOCK_STREAM、SOCK_DGRAM和SOCK_RAW，分别表示流套接字、数据包套接字和原始协议接口。<br>socket()函数的第3个参数Protocol用来指定程序所使用的通信协议，这里可以选择使用IPPROTO_TCP、IPPROTO_UDP、IPPROTO_ICMP等协议，这个参数的值是根据<code>第2个参数</code>的值进行选择。第2个参数如果使用<code>SOCK_STREAM</code>，那么第3个参数应该使用<code>IPPROTO_TCP</code>；如果第2个参数使用SOCK_DGRAM，那么第3个参数应该使用IPPROTO_UDP。也就是说，如果第2个参数是SOCK_STREAM或SOCK_DGRAM，那么第3个参数可以默认为0.如果第2个参数指定的是SOCK_RAW，那么第3个参数必须指定，而不能使用0值。<br>socket()函数调用成功返回值为一个新的套接字描述符，如果调用失败，则返回INVALID_SOCKET。调用失败后，想要知道原因，那么紧接着调用WSAGetLastError()函数得到错误码。<br>PS：所有的Winsock函数出错后都可以调用WSAGetLastError()得到错误码。</p>
+<p>socket()函数共有3个参数，第1个参数af用来指定地址族，在Windows下可以使用的参数有很多个，但是真正可以使用的只有两个，分别说AF_INET和PF_INET。这两个宏在Winsock2.h下的定义相同，分别如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> AF_INET		2		<span class="comment">/* internetwork:UDP, TCP, etc. */</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*	Protocol families,same as address families for now</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PF_INET		AF_INET</span></span><br></pre></td></tr></table></figure></p>
+<p>以上两个定义都摘自Winsock2.h头文件。从定义来看，PF_INET和AF_INET是相同的。看PF_INET宏定义上面的注释，AF表示地址族（Address Family）,而PF表示协议族（Protocol Family）。对于Windows来说，<code>两者相同</code>；对于Unix/Linux来说，两者是<code>不同的</code>。一般情况下，调用socket()函数时应使用<code>PF_INET</code>，而在设置地址时使用<code>AF_INET</code>。<br>sock()函数的第2个参数type是指定新套接字描述符的类型。这里可以使用的值通常有3个，分别是SOCK_STREAM、SOCK_DGRAM和SOCK_RAW，分别表示流套接字、数据包套接字和原始协议接口。<br>socket()函数的第3个参数Protocol用来指定程序所使用的通信协议，这里可以选择使用IPPROTO_TCP、IPPROTO_UDP、IPPROTO_ICMP等协议，这个参数的值是根据<code>第2个参数</code>的值进行选择。第2个参数如果使用<code>SOCK_STREAM</code>，那么第3个参数应该使用<code>IPPROTO_TCP</code>；如果第2个参数使用SOCK_DGRAM，那么第3个参数应该使用IPPROTO_UDP。也就是说，如果第2个参数是SOCK_STREAM或SOCK_DGRAM，那么第3个参数可以默认为0.如果第2个参数指定的是SOCK_RAW，那么第3个参数必须指定，而不能使用0值。<br>socket()函数调用成功返回值为一个新的套接字描述符，如果调用失败，则返回INVALID_SOCKET。调用失败后，想要知道原因，那么紧接着调用WSAGetLastError()函数得到错误码。<br>PS：所有的Winsock函数出错后都可以调用WSAGetLastError()得到错误码。</p>
 <h3 id="关闭套接字的函数定义如下："><a href="#关闭套接字的函数定义如下：" class="headerlink" title="关闭套接字的函数定义如下："></a>关闭套接字的函数定义如下：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">closesocket</span><span class="params">(SOCKET s)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>closesocket()函数是socket()函数创建的套接字描述符。<br>PS：对于WSAStartup()/WSACleanup()和socket()/closesocket()这样的函数，最好保持成对出现。也就是说，在写完一个函数时，立刻写出另外一个函数的调用，以免忘记资源的释放。</p>
 <h2 id="3-面向连接协议的函数"><a href="#3-面向连接协议的函数" class="headerlink" title="3.面向连接协议的函数"></a>3.面向连接协议的函数</h2><p>前面的部分提到了面向连接协议与非面向连接协议所用到的函数是不相同的。这里来介绍面向连接的函数：bind()、listen()、accept()、send()和recv()。这些函数是常用的<code>面向连接的函数</code>，只是一个基础。Winsock库的函数非常多，这里只是寥寥几个而已，下面介绍函数的使用方法。<br>通过socket()函数可以直接创建一个新的套接字描述符，但是它只是一个描述符，为网络的一些资源做准备。要想真正在网络上进行通信，需要<code>本地的地址</code>与<code>本地的端口号信息</code>。当然，本地的地址与端口号信息需要和套接字描述符进行关联，进行绑定。在Winsock函数中，使用bind()函数完成套接字与地址端口信息的绑定。bind()函数的定义如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bind</span>(<span class="params">SOCKET s, <span class="keyword">const</span> <span class="keyword">struct</span> sockaddr FAR *name, <span class="keyword">int</span> namelen</span>)</span>;</span><br></pre></td></tr></table></figure></p>
@@ -475,7 +475,7 @@
   <p><span>本文标题:</span>2.1.3Winsock网络编程知识（上）</a></p>
   <p><span>文章作者:</span>water</a></p>
   <p><span>发布时间:</span>2018年07月01日 - 13:39:48</p>
-  <p><span>最后更新:</span>2018年07月01日 - 15:25:57</p>
+  <p><span>最后更新:</span>2018年07月02日 - 13:19:21</p>
   <p><span>原始链接:</span><a href="/2018/07/01/2-1-3Winsock网络编程知识（上）/" title="2.1.3Winsock网络编程知识（上）">http://9cat.top/2018/07/01/2-1-3Winsock网络编程知识（上）/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/01/2-1-3Winsock网络编程知识（上）/"  aria-label="复制成功！"></i></span>
   </p>
@@ -657,7 +657,7 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

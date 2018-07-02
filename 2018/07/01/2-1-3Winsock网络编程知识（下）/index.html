@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Jack Cat">
 <meta property="og:description" content="！上接Winsock网络编程知识（上）！sockaddr结构体是为了保持各个特定协议之间的兼容性而设计的。为bind()函数指定的地址和端口时，向sockaddr_in结构体填充相应的内容，而调用函数时应该使用sockaddr结构体。在sockaddr_in结构体中，还有一个结构体in_addr，该结构体在winsock2.h中的定义如下:1234567struct in_addr&amp;#123; u">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-01T11:36:19.141Z">
+<meta property="og:updated_time" content="2018-07-02T05:20:05.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2.1.3Winsock网络编程知识（下）">
 <meta name="twitter:description" content="！上接Winsock网络编程知识（上）！sockaddr结构体是为了保持各个特定协议之间的兼容性而设计的。为bind()函数指定的地址和端口时，向sockaddr_in结构体填充相应的内容，而调用函数时应该使用sockaddr结构体。在sockaddr_in结构体中，还有一个结构体in_addr，该结构体在winsock2.h中的定义如下:1234567struct in_addr&amp;#123; u">
@@ -353,8 +353,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-01T19:36:19+08:00">
-                2018-07-01
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-02T13:20:05+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -445,7 +445,7 @@
 <p>该函数是将点分十进制表示的IP地址转换成<code>unsigned long</code>类型的数值。该函数的参数cp是指向点分十进制IP地址的<code>字符指针</code>。同时该函数也是一个<code>逆函数</code>，是将unsigned long型的数值型IP地址转换成点分十进制的IP地址，该函数的定义如下：<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">char</span> FAR * inet_ntoa(<span class="class"><span class="keyword">struct</span> <span class="title">in_addr</span></span> <span class="keyword">in</span>);</span><br></pre></td></tr></table></figure></p>
 <p>sockaddr_in结构体中的sin_port表示端口，这个端口需要使用大尾方式字节序存储（也称大端和小端，是两种不同的存储方式。）在intel X86架构下，数值存储方式默认W为小尾方式字节序，而TCP/IP的数值的存储方式都是大尾方式的字节序。为了实现方便的转换，winsock2.h中提供为了方便的函数，即htons()和htonl()两个函数，并且提供了他们的逆函数ntohs()和ntohl()。<br>htons()和htonl()函数的定义分别如下：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">u_short htons(<span class="name">u_short</span> hostshort)<span class="comment">;</span></span><br><span class="line">u_long  htonl(<span class="name">u_long</span> hostlong)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <p>ntohs()和ntohl()函数的定义分别如下：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">u_short ntohs(<span class="name">u_short</span> netshort)<span class="comment">;</span></span><br><span class="line">u_long ntohl(<span class="name">u_long</span> netlong)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
-<p>这4个函数中，前两个函数是将<code>主机字节序</code>转换成<code>网络字节序</code>，后两个是将<code>网络字节序</code>转换成<code>主机字节序</code>。在有些架构系统下，主机字节序和网络字节序是相同的，那么转换函数不进行任何转换，但是为了代码的移植性，还是会进行转换函数的调用。<br>具体的bind()函数的使用方法如下：<br><figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建套接字</span></span><br><span class="line">SOCKET sListen = socket(PF_INEF, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line"><span class="comment">//对sockaddr_in结构体填充地址、端口等信息</span></span><br><span class="line">struct sockaddr_in ServerAddr;</span><br><span class="line">ServerAddr.sin_family = AF_INEF;</span><br><span class="line">ServerAddr.sin_addr.S_un.S_addr = inet_addr(<span class="string">"10.10.30.16"</span>);</span><br><span class="line">ServerAddr.sin_port = htons(<span class="number">1234</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//绑定套接字与地址信息</span></span><br><span class="line">bind(sLisent, (SOCKADDR *)&amp;ServerAddr, sizeof(serverAddr));</span><br></pre></td></tr></table></figure></p>
+<p>这4个函数中，前两个函数是将<code>主机字节序</code>转换成<code>网络字节序</code>，后两个是将<code>网络字节序</code>转换成<code>主机字节序</code>。在有些架构系统下，主机字节序和网络字节序是相同的，那么转换函数不进行任何转换，但是为了代码的移植性，还是会进行转换函数的调用。<br>具体的bind()函数的使用方法如下：<br><figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建套接字</span></span><br><span class="line">SOCKET sListen = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line"><span class="comment">//对sockaddr_in结构体填充地址、端口等信息</span></span><br><span class="line">struct sockaddr_in ServerAddr;</span><br><span class="line">ServerAddr.sin_family = AF_INET;</span><br><span class="line">ServerAddr.sin_addr.S_un.S_addr = inet_addr(<span class="string">"10.10.30.16"</span>);</span><br><span class="line">ServerAddr.sin_port = htons(<span class="number">1234</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//绑定套接字与地址信息</span></span><br><span class="line">bind(sLisent, (SOCKADDR *)&amp;ServerAddr, sizeof(serverAddr));</span><br></pre></td></tr></table></figure></p>
 <p>PS:对于服务器的地址可以指定为INADDR_ANY宏，表示“任意地址”或者“所有地址”。当客户端发起连接时。服务器操作系统接收到客户端的连接，根据网络的配置情况会自动选择一个IP地址和客户端进行通信。<br>当套接字与地址端口信息绑定后，就需要让端口进行监听，当端口进行监听状态以后就可以接受其他主机的连接了。监听端口和接受连接请求的函数分别为listen()和accept()。<br>监听端口的函数定义如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">listen</span><span class="params">(SOCKET s, <span class="keyword">int</span> backlog)</span></span>;</span><br></pre></td></tr></table></figure></p>
 <p>该函数有两个参数，第1个参数s是指定要监听的套接字描述符，第2个参数是backlog是允许进入请求连接队列的个数，backlog的最大值由系统指定，在winsock2.h中，其最大值由SOMAXCONN表示，该值的定义如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SOMAXCONN     0x7fffffff</span></span><br></pre></td></tr></table></figure></p>
 <p>接受连接请求的函数定义如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SOCKET <span class="title">accept</span>(<span class="params">SOCKET s,<span class="keyword">struct</span> sockaddr FAR *addr, <span class="keyword">int</span> FAR *addrlen</span>)</span>;</span><br></pre></td></tr></table></figure></p>
@@ -477,7 +477,7 @@
   <p><span>本文标题:</span>2.1.3Winsock网络编程知识（下）</a></p>
   <p><span>文章作者:</span>water</a></p>
   <p><span>发布时间:</span>2018年07月01日 - 15:28:58</p>
-  <p><span>最后更新:</span>2018年07月01日 - 19:36:19</p>
+  <p><span>最后更新:</span>2018年07月02日 - 13:20:05</p>
   <p><span>原始链接:</span><a href="/2018/07/01/2-1-3Winsock网络编程知识（下）/" title="2.1.3Winsock网络编程知识（下）">http://9cat.top/2018/07/01/2-1-3Winsock网络编程知识（下）/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/01/2-1-3Winsock网络编程知识（下）/"  aria-label="复制成功！"></i></span>
   </p>
@@ -659,7 +659,7 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
