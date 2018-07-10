@@ -90,23 +90,17 @@
 
 
 
-<meta name="description" content="缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操">
+<meta name="description" content="第四章 5.结构CandyBar包含3个成员。第一个成员储存了糖块的品牌；第二个成员储存糖块的重量（可以有小数）；第三个成员储存了糖块的卡路里含量（整数）。请编写一个程序，声明这个结构，创建一个名为snack的CandyBar变量，并将其成员分别初始化为“Mocha Munch”、2.3和350.初始化应用在声明snack时进行。最后，程序显示snack变量的内容。1234567891011121">
 <meta property="og:type" content="article">
-<meta property="og:title" content="缓冲区溢出练习">
-<meta property="og:url" content="http://9cat.top/2018/07/01/auth-overflow/index.html">
+<meta property="og:title" content="学习笔记:C++primer.plus编程练习题答案">
+<meta property="og:url" content="http://9cat.top/2018/07/10/学习笔记-C-primer-plus编程练习题答案/index.html">
 <meta property="og:site_name" content="Jack Cat">
-<meta property="og:description" content="缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操">
+<meta property="og:description" content="第四章 5.结构CandyBar包含3个成员。第一个成员储存了糖块的品牌；第二个成员储存糖块的重量（可以有小数）；第三个成员储存了糖块的卡路里含量（整数）。请编写一个程序，声明这个结构，创建一个名为snack的CandyBar变量，并将其成员分别初始化为“Mocha Munch”、2.3和350.初始化应用在声明snack时进行。最后，程序显示snack变量的内容。1234567891011121">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow.png">
-<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow2.png">
-<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow3.png">
-<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow4.png">
-<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow5.png">
-<meta property="og:updated_time" content="2018-07-01T14:52:52.852Z">
+<meta property="og:updated_time" content="2018-07-10T06:20:56.591Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="缓冲区溢出练习">
-<meta name="twitter:description" content="缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操">
-<meta name="twitter:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow.png">
+<meta name="twitter:title" content="学习笔记:C++primer.plus编程练习题答案">
+<meta name="twitter:description" content="第四章 5.结构CandyBar包含3个成员。第一个成员储存了糖块的品牌；第二个成员储存糖块的重量（可以有小数）；第三个成员储存了糖块的卡路里含量（整数）。请编写一个程序，声明这个结构，创建一个名为snack的CandyBar变量，并将其成员分别初始化为“Mocha Munch”、2.3和350.初始化应用在声明snack时进行。最后，程序显示snack变量的内容。1234567891011121">
 
 
 
@@ -136,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://9cat.top/2018/07/01/auth-overflow/"/>
+  <link rel="canonical" href="http://9cat.top/2018/07/10/学习笔记-C-primer-plus编程练习题答案/"/>
 
 
 
 
 
-  <title>缓冲区溢出练习 | Jack Cat</title>
+  <title>学习笔记:C++primer.plus编程练习题答案 | Jack Cat</title>
   
 
 
@@ -313,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/07/01/auth-overflow/">
+    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/07/10/学习笔记-C-primer-plus编程练习题答案/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="water">
@@ -330,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">缓冲区溢出练习</h1>
+          <h1 class="post-title" itemprop="name headline">学习笔记:C++primer.plus编程练习题答案</h1>
         
 
         <div class="post-meta">
@@ -342,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-01T21:54:52+08:00">
-                2018-07-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T13:30:34+08:00">
+                2018-07-10
               </time>
             
 
@@ -358,34 +352,12 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-01T22:52:52+08:00">
-                2018-07-01
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-10T14:20:56+08:00">
+                2018-07-10
               </time>
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/溢出/" itemprop="url" rel="index">
-                    <span itemprop="name">溢出</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -408,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  947
+                  579
                 </span>
               
 
@@ -424,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -445,8 +417,14 @@
       
 
       
-        <p>缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。<br>尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操作很可能导致程序崩溃。这称为<code>缓冲区超限(buffer overrun)</code>或缓冲区溢出，由于多出的2个字节数据会溢出，存储在已分配的存储空间之外，因此会重写已分配存储空间之后的数据。如果重写的是一段关键数据，程序会崩溃。<br>通过破坏内存来控制执行流程。程序auth_overflow.c演示了这个概念。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check_authentication</span><span class="params">(<span class="keyword">char</span> *password)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> auth_flag = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> password_buffer[<span class="number">16</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">strcpy</span>(password_buffer,password);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strcmp</span>(password_buffer,<span class="string">"brillig"</span>)==<span class="number">0</span>)</span><br><span class="line">	auth_flag = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strcmp</span>(password_buffer,<span class="string">"outgrabe"</span>)==<span class="number">0</span>)</span><br><span class="line">	auth_flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> auth_flag;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(argc&lt;<span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Usage:%s&lt;password&gt;\n"</span>,argv[<span class="number">0</span>]);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(check_authentication(argv[<span class="number">1</span>]))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n-=-=-=-=-=-=-=-=\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Access Granted.\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n-=-=-=-=-=-=-=-=\n"</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\nAccess Denied.\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这个示例程序接受一个密码作为它唯一的命令行参数，然后调用函数check_authentication()。这个函数允许<code>两个密码</code>，意味着它允许多重验证方法。如果使用网络两个密码中的一个，函数会返回1，这样会授予访问权限。在编译代码前，通过查看源代码，您应该能够推测出它的大部分功能。但在程序时，请使用-g选项，因为随后会对其进行调试。<br><img src="overflow.png" alt=""><br>您也许早就推测出会发生什么，但让我们使用调试工具对它进行检查以查看其细节。<br><img src="overflow2.png" alt=""><br>使用-q选项会使得GDB调试工具取消欢迎标语，并在第10行和第17行设置了断点。程序运行时，会在断点处暂停并为我们提供一个检查内存的机会。<br><img src="overflow3.png" alt=""><br>第1个断点在strcpy()发生之前。通过检查password——buffer指针，调试工具显示它填充的是随机的未初始化的数据，位于内存中0xbffff5ec处。通过检查auth_flag变量的地址，我们可以看到他的存储位置0xbffff5fc和它的值0。可以使用打印命令做算术运算，它显示auth_flag位于password_buffer开始之后的16字节处。也可以在以password_buffer开始的一块内存中看到这种关系。<br><img src="overflow4.png" alt=""><br>继续运行到strcpy()之后的第2个断点，再次对这些存储单元进行检查。password_buffer溢出到auth_flag中，将它的前两个字节变为0x41。值0x00004141可能看起来是颠倒的，但是要记住x86采用的是小端存储方式。如果单独检查每个4字节单元，就可以看到内存实际上是如何排列的。最终，程序会将这个值看做一个整数，其值为1094795585。<br><img src="overflow5.png" alt=""><br>溢出之后，函数check_authentication()会返回1094795585，而不是0.因为if语句认为任何非0值都能通过验证，所以程序执行流程进入授权部分。在这个列子中，变量auth_flag是<code>执行控制点</code>，因此覆盖该值是实现控制的根源。</p>
+        <h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><p> 5.结构CandyBar包含3个成员。第一个成员储存了糖块的品牌；第二个成员储存糖块的重量（可以有小数）；第三个成员储存了糖块的卡路里含量（整数）。请编写一个程序，声明这个结构，创建一个名为snack的CandyBar变量，并将其成员分别<code>初始化</code>为“Mocha Munch”、2.3和350.初始化应用在声明snack时进行。最后，程序显示snack变量的内容。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Asize=<span class="number">20</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">CandyBar</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> brand[Asize];</span><br><span class="line">	<span class="keyword">double</span> weight;</span><br><span class="line">	<span class="keyword">int</span> calory;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">	CandyBar snack=&#123;<span class="string">"Mocha Munch"</span>,<span class="number">2.3</span>,<span class="number">350</span>&#125;;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Here's the information of snack:\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"brand:"</span>&lt;&lt;snack.brand&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"weight:"</span>&lt;&lt;snack.weight&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"calory:"</span>&lt;&lt;snack.calory&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> 6.结构CandyBar包含3个成员，如编程练习5所示。请编写一个程序，创建一个包含3个元素的CandyBar<code>数组</code>，并将它们初始化为所选择的值，然后显示每个结构的内容。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Asize=<span class="number">20</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">CandyBar</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> brand[Asize];</span><br><span class="line">	<span class="keyword">double</span> weight;</span><br><span class="line">	<span class="keyword">int</span> calory;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">	CandyBar snack[<span class="number">3</span>]=&#123;</span><br><span class="line">		&#123;<span class="string">"Moucha Munch"</span>,<span class="number">2.3</span>,<span class="number">350</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"XuFuji"</span>,<span class="number">1.1</span>,<span class="number">300</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"Alps"</span>,<span class="number">0.4</span>,<span class="number">100</span>&#125;</span><br><span class="line">	&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;snack[i].brand&lt;&lt;<span class="built_in">endl</span></span><br><span class="line">		    &lt;&lt;snack[i].weight&lt;&lt;<span class="built_in">endl</span></span><br><span class="line">		    &lt;&lt;snack[i].calory&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>7.William Wingate从事披萨饼分析服务。对于每个披萨饼，他都需要记录下列信息：</p>
+<ul>
+<li>披萨饼公司的名称，可以有多个单词组成。</li>
+<li>披萨饼的直径。</li>
+<li>披萨饼的重量。<br>请设计一个能够存储这些信息的结构，并编写一个使用这种结构的程序。程序将请求用户输入上述信息，然后显示这些信息。请使用cin（或它的方法）和cout。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Size=<span class="number">20</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">pizza</span>//声明结构</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> company[Size];</span><br><span class="line">	<span class="keyword">double</span> diameter;</span><br><span class="line">	<span class="keyword">double</span> weight;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">	pizza pie;<span class="comment">//创建一个名为pie的结构变量</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"What's the name of pizza company:"</span>;</span><br><span class="line">	<span class="built_in">cin</span>.getline(pie.company,Size);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"What's the diameter of pizza:"</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;pie.diameter;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"What's the weight of pizza:"</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;pie.weight;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"company:"</span>&lt;&lt;pie.company&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"diameter:"</span>&lt;&lt;pie.diameter&lt;&lt;<span class="string">"inches"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"weight:"</span>&lt;&lt;pie.weight&lt;&lt;<span class="string">"ounches"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -465,12 +443,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>缓冲区溢出练习</a></p>
+  <p><span>本文标题:</span>学习笔记:C++primer.plus编程练习题答案</a></p>
   <p><span>文章作者:</span>water</a></p>
-  <p><span>发布时间:</span>2018年07月01日 - 21:54:52</p>
-  <p><span>最后更新:</span>2018年07月01日 - 22:52:52</p>
-  <p><span>原始链接:</span><a href="/2018/07/01/auth-overflow/" title="缓冲区溢出练习">http://9cat.top/2018/07/01/auth-overflow/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/01/auth-overflow/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年07月10日 - 13:30:34</p>
+  <p><span>最后更新:</span>2018年07月10日 - 14:20:56</p>
+  <p><span>原始链接:</span><a href="/2018/07/10/学习笔记-C-primer-plus编程练习题答案/" title="学习笔记:C++primer.plus编程练习题答案">http://9cat.top/2018/07/10/学习笔记-C-primer-plus编程练习题答案/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/10/学习笔记-C-primer-plus编程练习题答案/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -525,8 +503,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/01/一位程序员的十年总结/" rel="next" title="一位程序员的十年总结(转载)">
-                <i class="fa fa-chevron-left"></i> 一位程序员的十年总结(转载)
+              <a href="/2018/07/02/32位汇编寄存器/" rel="next" title="32位汇编寄存器(转载)">
+                <i class="fa fa-chevron-left"></i> 32位汇编寄存器(转载)
               </a>
             
           </div>
@@ -534,10 +512,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/02/2-2-1实例-基于TCP的通信/" rel="prev" title="2.2.1实例;基于TCP的通信">
-                2.2.1实例;基于TCP的通信 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -615,8 +589,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -715,6 +698,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章"><span class="nav-number">1.</span> <span class="nav-text">第四章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
