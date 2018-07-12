@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://9cat.top/"/>
-  <updated>2018-07-10T06:20:56.591Z</updated>
+  <updated>2018-07-12T13:50:32.076Z</updated>
   <id>http://9cat.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>比较char与string</title>
+    <link href="http://9cat.top/2018/07/12/%E6%AF%94%E8%BE%83char%E4%B8%8Estring/"/>
+    <id>http://9cat.top/2018/07/12/比较char与string/</id>
+    <published>2018-07-12T13:12:59.000Z</published>
+    <updated>2018-07-12T13:50:32.076Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>使用C-风格字符串中的strcmp()函数来比较。该函数接受两个字符串地址作为参数。这意味这参数可以是<code>指针</code>、<code>字符串常量</code>或<code>字符数组名</code>。如果两个字符串相同。该函数返回0,；如果第一个字符串按字母排序排在<code>第二个</code>字符之后，则strcpm()将返回一个<code>正数值</code>。实际上，“按系统排序顺序”比“按字母顺序”更准确。这意味着字符是根据字符的系统编码来进行比较的。例如，使用ASCII码时，所有大写字母的编码都比小写字母<code>小</code>，所以按排序顺序，大写字母将位于小写字母之前。因此，字符串“Zoo”在字符串“ariary”之前。根据编码进行比较还意味着大写字母和小写字母是不同的，因此字符串“FOO”和字符串“foo”不同。<br>在有些语言（入BASIC和标准Pascal）中，存储在不同长度的数组中的字符串彼此不相同。但是C-风格字符串是通过结尾的空值字符定义的，而不是由其所在数组的长度定义的。<code>这意味着两个字符串即使被存储在长度不同的数组中，也可能是相同的：</code><br>    char big[80] = “Daffy”;    //5 letters plus \0<br>    char little[6] = “Daffy”;  //5 letters plus \0<br>顺便一说，虽然不能用关系运算符来比较字符串，但却可以用来比较字符，因为字符实际上是整型。因此下面的代码可以用来显示字母表中的字符，至少对于ASCII字符集和Unicode字符集来说是有效的：<br>for(ch = ‘a’ ch &lt;+ ‘z’;ch++)<br>    cout &lt;&lt; ch;<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> word[<span class="number">5</span>]=<span class="string">"?ate"</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">char</span> ch = <span class="string">'a'</span>;<span class="built_in">strcmp</span>(word,<span class="string">"mate"</span>);ch++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; word &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">word[<span class="number">0</span>]=ch;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"After loop ends,word is "</span>&lt;&lt;word&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="检测相等或排列顺序："><a href="#检测相等或排列顺序：" class="headerlink" title="检测相等或排列顺序："></a>检测相等或排列顺序：</h2><p>可以使用strcmp()来测试C-风格字符串是否相等（排列顺序）。如果str1和str2相等，则下面的表达式为true：<br>strcmp(str1,str2) == 0<br>如果str1和str2不相等，则下面两个表达式都为true：<br>strcmp(str1,str2) != 0<br>strcmp(str1,str2)<br>如果str1在str2前面，则下面的表达式为true：<br>strcmp(str1,str2) &lt; 0<br>如果str1在str2后面，则下面的表达式为true：<br>strcmp(str1,str2) &gt; 0<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> word=<span class="string">"?ate"</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">char</span> ch = <span class="string">'a'</span>;word!=<span class="string">"mate"</span>;ch++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; word &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">word[<span class="number">0</span>]=ch;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"After loop ends,word is "</span>&lt;&lt;word&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://9cat.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>学习笔记:C++primer.plus编程练习题答案</title>
