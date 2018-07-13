@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="第四章 5.结构CandyBar包含3个成员。第一个成员储存了糖块的品牌；第二个成员储存糖块的重量（可以有小数）；第三个成员储存了糖块的卡路里含量（整数）。请编写一个程序，声明这个结构，创建一个名为snack的CandyBar变量，并将其成员分别初始化为“Mocha Munch”、2.3和350.初始化应用在声明snack时进行。最后，程序显示snack变量的内容。1234567891011121">
+<meta name="description" content="栈帧（stack frame）是这样一种低级概念。栈帧是在程序的运行时时栈中分配的内存块，专门用于特定的函数调用。程序员通常会将可执行语句分组，划分成叫做函数（也称过程、子例程或方法）的单元。有时候，这样做是按照所使用的语言的的要求。多数情况下，以这些函数单元为基础构建程序是一种良好的编程实践。如果一个函数并未执行，通常它并不需要内存。但是，但函数被调用时，它就可能因为某种原因需要用到内存。这源于">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习笔记:C++primer.plus编程练习题答案">
-<meta property="og:url" content="http://9cat.top/2018/07/10/学习笔记-C-primer-plus编程练习题答案/index.html">
+<meta property="og:title" content="学习笔记：栈帧">
+<meta property="og:url" content="http://9cat.top/2018/07/13/学习笔记：栈帧/index.html">
 <meta property="og:site_name" content="Jack Cat">
-<meta property="og:description" content="第四章 5.结构CandyBar包含3个成员。第一个成员储存了糖块的品牌；第二个成员储存糖块的重量（可以有小数）；第三个成员储存了糖块的卡路里含量（整数）。请编写一个程序，声明这个结构，创建一个名为snack的CandyBar变量，并将其成员分别初始化为“Mocha Munch”、2.3和350.初始化应用在声明snack时进行。最后，程序显示snack变量的内容。1234567891011121">
+<meta property="og:description" content="栈帧（stack frame）是这样一种低级概念。栈帧是在程序的运行时时栈中分配的内存块，专门用于特定的函数调用。程序员通常会将可执行语句分组，划分成叫做函数（也称过程、子例程或方法）的单元。有时候，这样做是按照所使用的语言的的要求。多数情况下，以这些函数单元为基础构建程序是一种良好的编程实践。如果一个函数并未执行，通常它并不需要内存。但是，但函数被调用时，它就可能因为某种原因需要用到内存。这源于">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-10T06:20:56.591Z">
+<meta property="og:updated_time" content="2018-07-13T09:07:28.399Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习笔记:C++primer.plus编程练习题答案">
-<meta name="twitter:description" content="第四章 5.结构CandyBar包含3个成员。第一个成员储存了糖块的品牌；第二个成员储存糖块的重量（可以有小数）；第三个成员储存了糖块的卡路里含量（整数）。请编写一个程序，声明这个结构，创建一个名为snack的CandyBar变量，并将其成员分别初始化为“Mocha Munch”、2.3和350.初始化应用在声明snack时进行。最后，程序显示snack变量的内容。1234567891011121">
+<meta name="twitter:title" content="学习笔记：栈帧">
+<meta name="twitter:description" content="栈帧（stack frame）是这样一种低级概念。栈帧是在程序的运行时时栈中分配的内存块，专门用于特定的函数调用。程序员通常会将可执行语句分组，划分成叫做函数（也称过程、子例程或方法）的单元。有时候，这样做是按照所使用的语言的的要求。多数情况下，以这些函数单元为基础构建程序是一种良好的编程实践。如果一个函数并未执行，通常它并不需要内存。但是，但函数被调用时，它就可能因为某种原因需要用到内存。这源于">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://9cat.top/2018/07/10/学习笔记-C-primer-plus编程练习题答案/"/>
+  <link rel="canonical" href="http://9cat.top/2018/07/13/学习笔记：栈帧/"/>
 
 
 
 
 
-  <title>学习笔记:C++primer.plus编程练习题答案 | Jack Cat</title>
+  <title>学习笔记：栈帧 | Jack Cat</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/07/10/学习笔记-C-primer-plus编程练习题答案/">
+    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/07/13/学习笔记：栈帧/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="water">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">学习笔记:C++primer.plus编程练习题答案</h1>
+          <h1 class="post-title" itemprop="name headline">学习笔记：栈帧</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T13:30:34+08:00">
-                2018-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T16:25:41+08:00">
+                2018-07-13
               </time>
             
 
@@ -352,12 +352,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-10T14:20:56+08:00">
-                2018-07-10
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-13T17:07:28+08:00">
+                2018-07-13
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -380,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  579
+                  885
                 </span>
               
 
@@ -417,14 +439,7 @@
       
 
       
-        <h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><p> 5.结构CandyBar包含3个成员。第一个成员储存了糖块的品牌；第二个成员储存糖块的重量（可以有小数）；第三个成员储存了糖块的卡路里含量（整数）。请编写一个程序，声明这个结构，创建一个名为snack的CandyBar变量，并将其成员分别<code>初始化</code>为“Mocha Munch”、2.3和350.初始化应用在声明snack时进行。最后，程序显示snack变量的内容。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Asize=<span class="number">20</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">CandyBar</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> brand[Asize];</span><br><span class="line">	<span class="keyword">double</span> weight;</span><br><span class="line">	<span class="keyword">int</span> calory;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">	CandyBar snack=&#123;<span class="string">"Mocha Munch"</span>,<span class="number">2.3</span>,<span class="number">350</span>&#125;;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Here's the information of snack:\n"</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"brand:"</span>&lt;&lt;snack.brand&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"weight:"</span>&lt;&lt;snack.weight&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"calory:"</span>&lt;&lt;snack.calory&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> 6.结构CandyBar包含3个成员，如编程练习5所示。请编写一个程序，创建一个包含3个元素的CandyBar<code>数组</code>，并将它们初始化为所选择的值，然后显示每个结构的内容。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Asize=<span class="number">20</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">CandyBar</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> brand[Asize];</span><br><span class="line">	<span class="keyword">double</span> weight;</span><br><span class="line">	<span class="keyword">int</span> calory;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">	CandyBar snack[<span class="number">3</span>]=&#123;</span><br><span class="line">		&#123;<span class="string">"Moucha Munch"</span>,<span class="number">2.3</span>,<span class="number">350</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"XuFuji"</span>,<span class="number">1.1</span>,<span class="number">300</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"Alps"</span>,<span class="number">0.4</span>,<span class="number">100</span>&#125;</span><br><span class="line">	&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;snack[i].brand&lt;&lt;<span class="built_in">endl</span></span><br><span class="line">		    &lt;&lt;snack[i].weight&lt;&lt;<span class="built_in">endl</span></span><br><span class="line">		    &lt;&lt;snack[i].calory&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>7.William Wingate从事披萨饼分析服务。对于每个披萨饼，他都需要记录下列信息：</p>
-<ul>
-<li>披萨饼公司的名称，可以有多个单词组成。</li>
-<li>披萨饼的直径。</li>
-<li>披萨饼的重量。<br>请设计一个能够存储这些信息的结构，并编写一个使用这种结构的程序。程序将请求用户输入上述信息，然后显示这些信息。请使用cin（或它的方法）和cout。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Size=<span class="number">20</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">pizza</span>//声明结构</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> company[Size];</span><br><span class="line">	<span class="keyword">double</span> diameter;</span><br><span class="line">	<span class="keyword">double</span> weight;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">	pizza pie;<span class="comment">//创建一个名为pie的结构变量</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"What's the name of pizza company:"</span>;</span><br><span class="line">	<span class="built_in">cin</span>.getline(pie.company,Size);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"What's the diameter of pizza:"</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;pie.diameter;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"What's the weight of pizza:"</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;pie.weight;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"company:"</span>&lt;&lt;pie.company&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"diameter:"</span>&lt;&lt;pie.diameter&lt;&lt;<span class="string">"inches"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"weight:"</span>&lt;&lt;pie.weight&lt;&lt;<span class="string">"ounches"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
+        <p>栈帧（stack frame）是这样一种低级概念。栈帧是在程序的运行时时栈中分配的内存块，专门用于特定的函数调用。程序员通常会将可执行语句分组，划分成叫做<code>函数（也称过程、子例程或方法）的单元</code>。有时候，这样做是按照所使用的语言的的要求。多数情况下，以这些函数单元为基础构建程序是一种良好的编程实践。<br>如果一个函数并未执行，通常它并不需要内存。但是，但函数被调用时，它就可能因为某种原因需要用到内存。这源于几个方面的原因。<br>其一，函数的调用方可能希望以参数的方式向该函数传递信息，这些参数需要存储在某个地方，以方便函数查找它们。<br>其二，在执行任务的过程中，函数可能需要临时放入存储空间。程序员通常会通过声明局部变量来分配这类临时空间，这些变量将在函数执行过程中使用，但一旦完成函数调用，就无法再访问。<br>编译器利用栈帧（也叫<code>激活记录</code>）对函数参数和局部变量进行分配和释放（整个过程对程序员透明）。将在控制权转交给函数之前，编译器会插入代码，将函数参数放入栈帧内，并分配足够的内存，以保存函数的局部变量。鉴于栈帧的结构，该函数的返回地址也存储子啊新的栈帧内。使用栈帧使得<code>递归</code>成为可能，因为每个递归函数调用都有他自己的栈帧，这恰好将当前调用与前一次调用分隔开来。下面是调用一个函数时的详细操作步骤。<br>（1）调用方将被<code>调用函数</code>所需的任何参数放入到该函数所采用的的<code>调用约定</code>指定的位置。如果参数被放到运行时栈上，该操作可能导致程序的栈指针发生改变。<br>（2）调用方将控制权转交给被调用的函数，这个过程由x86CALL或MIPS JAL等指令执行。然后，<code>返回地址</code>被保存到程序栈或CPU寄存器中。<br>（3）如有必要，被调用的函数会配置一个<code>栈指针</code>，并保存调用方希望保持不变的任何寄存器值。<br>（4）被调用的函数为它可能需要的<code>任何局部变量</code>分配内存空间。一般，通过调整程序栈指针在<code>运行时上保留空间</code>来完成这一任务。<br>（5）被调用的函数执行其操作，可能生成一个结果。在执行操作的过程中，被调用的函数可能会访问调用函数传递给它的参数。如果函数<code>返回一个结果</code>，此结果通常被放置到一个<code>特定的寄存器</code>中，或者放置到函数返回后调用方<code>可立即访问的寄存器</code>中。<br>（6）一旦函数完成其操作，任何为局部变量保存的栈空间<code>即被释放</code>。通常，逆向执行第（4）步中的操作，即可完成这个任务。<br>（7）如果某个寄存器的值还为调用方保存（第（3）步）着，那么将其恢复到原始值。这包括恢复调用方的栈指针寄存器。</p>
 
       
     </div>
@@ -443,12 +458,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>学习笔记:C++primer.plus编程练习题答案</a></p>
+  <p><span>本文标题:</span>学习笔记：栈帧</a></p>
   <p><span>文章作者:</span>water</a></p>
-  <p><span>发布时间:</span>2018年07月10日 - 13:30:34</p>
-  <p><span>最后更新:</span>2018年07月10日 - 14:20:56</p>
-  <p><span>原始链接:</span><a href="/2018/07/10/学习笔记-C-primer-plus编程练习题答案/" title="学习笔记:C++primer.plus编程练习题答案">http://9cat.top/2018/07/10/学习笔记-C-primer-plus编程练习题答案/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/10/学习笔记-C-primer-plus编程练习题答案/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年07月13日 - 16:25:41</p>
+  <p><span>最后更新:</span>2018年07月13日 - 17:07:28</p>
+  <p><span>原始链接:</span><a href="/2018/07/13/学习笔记：栈帧/" title="学习笔记：栈帧">http://9cat.top/2018/07/13/学习笔记：栈帧/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/13/学习笔记：栈帧/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -503,8 +518,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/02/32位汇编寄存器/" rel="next" title="32位汇编寄存器(转载)">
-                <i class="fa fa-chevron-left"></i> 32位汇编寄存器(转载)
+              <a href="/2018/07/12/比较char与string/" rel="next" title="比较char与string">
+                <i class="fa fa-chevron-left"></i> 比较char与string
               </a>
             
           </div>
@@ -512,10 +527,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/12/比较char与string/" rel="prev" title="比较char与string">
-                比较char与string <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -593,17 +604,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -702,22 +704,6 @@ var jiathis_config={
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章"><span class="nav-number">1.</span> <span class="nav-text">第四章</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://9cat.top/"/>
-  <updated>2018-07-12T13:50:32.076Z</updated>
+  <updated>2018-07-13T09:07:28.399Z</updated>
   <id>http://9cat.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习笔记：栈帧</title>
+    <link href="http://9cat.top/2018/07/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%A0%88%E5%B8%A7/"/>
+    <id>http://9cat.top/2018/07/13/学习笔记：栈帧/</id>
+    <published>2018-07-13T08:25:41.000Z</published>
+    <updated>2018-07-13T09:07:28.399Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>栈帧（stack frame）是这样一种低级概念。栈帧是在程序的运行时时栈中分配的内存块，专门用于特定的函数调用。程序员通常会将可执行语句分组，划分成叫做<code>函数（也称过程、子例程或方法）的单元</code>。有时候，这样做是按照所使用的语言的的要求。多数情况下，以这些函数单元为基础构建程序是一种良好的编程实践。<br>如果一个函数并未执行，通常它并不需要内存。但是，但函数被调用时，它就可能因为某种原因需要用到内存。这源于几个方面的原因。<br>其一，函数的调用方可能希望以参数的方式向该函数传递信息，这些参数需要存储在某个地方，以方便函数查找它们。<br>其二，在执行任务的过程中，函数可能需要临时放入存储空间。程序员通常会通过声明局部变量来分配这类临时空间，这些变量将在函数执行过程中使用，但一旦完成函数调用，就无法再访问。<br>编译器利用栈帧（也叫<code>激活记录</code>）对函数参数和局部变量进行分配和释放（整个过程对程序员透明）。将在控制权转交给函数之前，编译器会插入代码，将函数参数放入栈帧内，并分配足够的内存，以保存函数的局部变量。鉴于栈帧的结构，该函数的返回地址也存储子啊新的栈帧内。使用栈帧使得<code>递归</code>成为可能，因为每个递归函数调用都有他自己的栈帧，这恰好将当前调用与前一次调用分隔开来。下面是调用一个函数时的详细操作步骤。<br>（1）调用方将被<code>调用函数</code>所需的任何参数放入到该函数所采用的的<code>调用约定</code>指定的位置。如果参数被放到运行时栈上，该操作可能导致程序的栈指针发生改变。<br>（2）调用方将控制权转交给被调用的函数，这个过程由x86CALL或MIPS JAL等指令执行。然后，<code>返回地址</code>被保存到程序栈或CPU寄存器中。<br>（3）如有必要，被调用的函数会配置一个<code>栈指针</code>，并保存调用方希望保持不变的任何寄存器值。<br>（4）被调用的函数为它可能需要的<code>任何局部变量</code>分配内存空间。一般，通过调整程序栈指针在<code>运行时上保留空间</code>来完成这一任务。<br>（5）被调用的函数执行其操作，可能生成一个结果。在执行操作的过程中，被调用的函数可能会访问调用函数传递给它的参数。如果函数<code>返回一个结果</code>，此结果通常被放置到一个<code>特定的寄存器</code>中，或者放置到函数返回后调用方<code>可立即访问的寄存器</code>中。<br>（6）一旦函数完成其操作，任何为局部变量保存的栈空间<code>即被释放</code>。通常，逆向执行第（4）步中的操作，即可完成这个任务。<br>（7）如果某个寄存器的值还为调用方保存（第（3）步）着，那么将其恢复到原始值。这包括恢复调用方的栈指针寄存器。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://9cat.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>比较char与string</title>
