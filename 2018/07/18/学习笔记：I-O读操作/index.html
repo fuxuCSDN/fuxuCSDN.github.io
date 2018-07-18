@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="I/O," />
 
 
 
@@ -90,23 +90,18 @@
 
 
 
-<meta name="description" content="缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操">
+<meta name="description" content="要运行下面的程序，首先得创建一个包含数字的文本文件。为此，可以用使用文本编辑器（如用于编写源代码的文本编辑器）。假设该文件为名scores.txt，包含的内容如下：1218 19 18.5 13.5 14 16 19.5 20 18 12 18.5 123456789101112131415161718192021222324252627282930313233343536373839404142">
+<meta name="keywords" content="I&#x2F;O">
 <meta property="og:type" content="article">
-<meta property="og:title" content="缓冲区溢出练习">
-<meta property="og:url" content="http://9cat.top/2018/07/01/auth-overflow/index.html">
+<meta property="og:title" content="学习笔记：I&#x2F;O读操作">
+<meta property="og:url" content="http://9cat.top/2018/07/18/学习笔记：I-O读操作/index.html">
 <meta property="og:site_name" content="Jack Cat">
-<meta property="og:description" content="缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操">
+<meta property="og:description" content="要运行下面的程序，首先得创建一个包含数字的文本文件。为此，可以用使用文本编辑器（如用于编写源代码的文本编辑器）。假设该文件为名scores.txt，包含的内容如下：1218 19 18.5 13.5 14 16 19.5 20 18 12 18.5 123456789101112131415161718192021222324252627282930313233343536373839404142">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow.png">
-<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow2.png">
-<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow3.png">
-<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow4.png">
-<meta property="og:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow5.png">
-<meta property="og:updated_time" content="2018-07-01T14:52:52.852Z">
+<meta property="og:updated_time" content="2018-07-18T08:03:50.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="缓冲区溢出练习">
-<meta name="twitter:description" content="缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操">
-<meta name="twitter:image" content="http://9cat.top/2018/07/01/auth-overflow/overflow.png">
+<meta name="twitter:title" content="学习笔记：I&#x2F;O读操作">
+<meta name="twitter:description" content="要运行下面的程序，首先得创建一个包含数字的文本文件。为此，可以用使用文本编辑器（如用于编写源代码的文本编辑器）。假设该文件为名scores.txt，包含的内容如下：1218 19 18.5 13.5 14 16 19.5 20 18 12 18.5 123456789101112131415161718192021222324252627282930313233343536373839404142">
 
 
 
@@ -136,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://9cat.top/2018/07/01/auth-overflow/"/>
+  <link rel="canonical" href="http://9cat.top/2018/07/18/学习笔记：I-O读操作/"/>
 
 
 
 
 
-  <title>缓冲区溢出练习 | Jack Cat</title>
+  <title>学习笔记：I/O读操作 | Jack Cat</title>
   
 
 
@@ -313,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/07/01/auth-overflow/">
+    <link itemprop="mainEntityOfPage" href="http://9cat.top/2018/07/18/学习笔记：I-O读操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="water">
@@ -330,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">缓冲区溢出练习</h1>
+          <h1 class="post-title" itemprop="name headline">学习笔记：I/O读操作</h1>
         
 
         <div class="post-meta">
@@ -342,8 +337,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-01T21:54:52+08:00">
-                2018-07-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T15:20:52+08:00">
+                2018-07-18
               </time>
             
 
@@ -358,8 +353,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-01T22:52:52+08:00">
-                2018-07-01
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-18T16:03:50+08:00">
+                2018-07-18
               </time>
             
           </span>
@@ -377,8 +372,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/溢出/" itemprop="url" rel="index">
-                    <span itemprop="name">溢出</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -408,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  947
+                  1,219
                 </span>
               
 
@@ -424,7 +419,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -445,8 +440,14 @@
       
 
       
-        <p>缓冲区溢出漏洞从计算机出现初期就已经存在，并且今天仍然存在。<br>尽管C语言的简单性增加了程序员的控制能力，提高了最后得到的程序的效率，但是程序员不小心的话，这种简单性会导致程序缓冲区溢出和存储器泄露这样的漏洞。这意味着一旦给某个变量分配了内存空间，则没有内置的安全机制来确保这个变量的容量能适应已分配的存储空间。如果程序员把10个字节的数据存入只分配了8个字节空间的缓冲区中，这种操作是允许的，即使这种操作很可能导致程序崩溃。这称为<code>缓冲区超限(buffer overrun)</code>或缓冲区溢出，由于多出的2个字节数据会溢出，存储在已分配的存储空间之外，因此会重写已分配存储空间之后的数据。如果重写的是一段关键数据，程序会崩溃。<br>通过破坏内存来控制执行流程。程序auth_overflow.c演示了这个概念。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check_authentication</span><span class="params">(<span class="keyword">char</span> *password)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> auth_flag = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> password_buffer[<span class="number">16</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">strcpy</span>(password_buffer,password);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strcmp</span>(password_buffer,<span class="string">"brillig"</span>)==<span class="number">0</span>)</span><br><span class="line">	auth_flag = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strcmp</span>(password_buffer,<span class="string">"outgrabe"</span>)==<span class="number">0</span>)</span><br><span class="line">	auth_flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> auth_flag;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(argc&lt;<span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Usage:%s&lt;password&gt;\n"</span>,argv[<span class="number">0</span>]);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(check_authentication(argv[<span class="number">1</span>]))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n-=-=-=-=-=-=-=-=\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Access Granted.\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n-=-=-=-=-=-=-=-=\n"</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\nAccess Denied.\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这个示例程序接受一个密码作为它唯一的命令行参数，然后调用函数check_authentication()。这个函数允许<code>两个密码</code>，意味着它允许多重验证方法。如果使用网络两个密码中的一个，函数会返回1，这样会授予访问权限。在编译代码前，通过查看源代码，您应该能够推测出它的大部分功能。但在程序时，请使用-g选项，因为随后会对其进行调试。<br><img src="overflow.png" alt=""><br>您也许早就推测出会发生什么，但让我们使用调试工具对它进行检查以查看其细节。<br><img src="overflow2.png" alt=""><br>使用-q选项会使得GDB调试工具取消欢迎标语，并在第10行和第17行设置了断点。程序运行时，会在断点处暂停并为我们提供一个检查内存的机会。<br><img src="overflow3.png" alt=""><br>第1个断点在strcpy()发生之前。通过检查password——buffer指针，调试工具显示它填充的是随机的未初始化的数据，位于内存中0xbffff5ec处。通过检查auth_flag变量的地址，我们可以看到他的存储位置0xbffff5fc和它的值0。可以使用打印命令做算术运算，它显示auth_flag位于password_buffer开始之后的16字节处。也可以在以password_buffer开始的一块内存中看到这种关系。<br><img src="overflow4.png" alt=""><br>继续运行到strcpy()之后的第2个断点，再次对这些存储单元进行检查。password_buffer溢出到auth_flag中，将它的前两个字节变为0x41。值0x00004141可能看起来是颠倒的，但是要记住x86采用的是小端存储方式。如果单独检查每个4字节单元，就可以看到内存实际上是如何排列的。最终，程序会将这个值看做一个整数，其值为1094795585。<br><img src="overflow5.png" alt=""><br>溢出之后，函数check_authentication()会返回1094795585，而不是0.因为if语句认为任何非0值都能通过验证，所以程序执行流程进入授权部分。在这个列子中，变量auth_flag是<code>执行控制点</code>，因此覆盖该值是实现控制的根源。</p>
+        <p>要运行下面的程序，首先得创建一个包含数字的文本文件。为此，可以用使用文本编辑器（如用于编写源代码的文本编辑器）。假设该文件为名scores.txt，包含的内容如下：<br><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">18 </span><span class="number">19</span> <span class="number">18.5</span> <span class="number">13.5</span> <span class="number">14</span> </span><br><span class="line"><span class="symbol">16 </span><span class="number">19.5</span> <span class="number">20</span> <span class="number">18</span> <span class="number">12</span> <span class="number">18.5</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> SIZE = <span class="number">60</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">	<span class="keyword">char</span> filename[SIZE];</span><br><span class="line">	ifstream inFile;  <span class="comment">//object for handing file input</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Enter name of data file: "</span>;</span><br><span class="line">    <span class="built_in">cin</span>.getline(filename,SIZE);</span><br><span class="line">    inFile.open(filename);  <span class="comment">//associate inFile with a file</span></span><br><span class="line">	<span class="keyword">if</span> (!inFile.is_open())  <span class="comment">//failed to open file</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Could not open the file "</span>&lt;&lt;filename &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Program terminating.\n"</span>;</span><br><span class="line">        <span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> value;</span><br><span class="line">    <span class="keyword">double</span> sum = <span class="number">0.0</span>;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;           <span class="comment">//number of items read</span></span><br><span class="line">    inFile &gt;&gt; value;        <span class="comment">//get first value</span></span><br><span class="line">    <span class="keyword">while</span> (inFile.good())   <span class="comment">//whiel input good and not at EOF</span></span><br><span class="line">    &#123;</span><br><span class="line">        ++count;             <span class="comment">//one more item read</span></span><br><span class="line">        sum+=value;         <span class="comment">//calculate running total</span></span><br><span class="line">        inFile&gt;&gt;value;      <span class="comment">// get next value</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (inFile.eof())</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"End of file reached.\n"</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (inFile.fail())</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Input terminated by data mismatch.\n"</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Input terminated for unknown reason.\n"</span>;</span><br><span class="line">    <span class="keyword">if</span> (count == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"No data processed.\n"</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Intem read: "</span>&lt;&lt;<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Sum: "</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Average: "</span>&lt;&lt;sum / count &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    inFile.close();  <span class="comment">//finished with the file</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="程序说明"><a href="#程序说明" class="headerlink" title="程序说明"></a>程序说明</h2><p>该程序没有使用硬编码文件名，而是将用户提供的文件名存储到字符数组filename中，然后该数组用作open()的参数：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">inFile</span>.<span class="keyword">open</span>(fielname);</span><br></pre></td></tr></table></figure></p>
+<p>检查文件是否被打开至关重要。下面是一些可能出问题的地方：指定的文件可能不存在；文件可能位于另一个目录（文件夹）中；访问可能拒绝；用户可能输错了文件名或省略了文件扩展名。很多初学者花了大量的时间检查文件读取循环的哪里出了问题后，最终却发现问题在于程序没有打开文件。检查文件是否被成功打开可避免这种精力放在错误地方的情况发生。<br>需要注意的是文件读取循环的正确设计。读取文件时，有几点需要检查。<br>首先，程序读取文件时不应超过EOF。如果最后一次读取数据时遇到EOF，方法eof()将返回true。<br>其次，程序可能遇到类型不匹配的情况。例如，下面程序期望文件中只包含数字。如果最后一次读取操作中发生了类型不匹配的情况，方法fail()将返回true（如果遇到EOF，该方法也将返回true）。<br>最后，可能出现意外的问题，如文件受损或硬件故障。如果最后一次读取文件时发生了这样的问题，方法bad()将返回true。不要分别检查这些情况，一种更简单的方法是使用good()方法，该方法在没有发生任何错误时返回true：<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (inFile.good())		//<span class="keyword">while</span> input good <span class="keyword">and</span> <span class="keyword">not</span> <span class="keyword">at</span> EOF</span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后，可以使用其他方法来确定循环终止的真正原因：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (inFile.eof())</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Enter of file reached.\n"</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (inFiel.fail())</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Input terminated by data mismatch .\n"</span>;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Input terminated for unknown reason.\n"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>这些代码紧跟在循环的后面，用于判断循环为何停止。由于eof()只能判断是否到达EOF，而fail()可用于检查EOF和类型不匹配，因此上述代码首先判断是否到达EOF。这样，如果执行到了else if 测试，便可排除EOF，因此，如果fail()返回true，便可断定导致循环终止的原因是<code>类型不匹配</code>。<br>方法good()指出最后一次读取输入的操作是否成功，这一点至关重要。这意味着应该在执行读取输入的操作后，立刻应用这种测试。为此，一种标方法是，在循环之前（首次执行循环前）放置一条输入语句，并在循环的末尾（下次执行循环测试之前）放置另一条输入语句：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// standard file-reading loop design</span></span><br><span class="line"><span class="keyword">inFile</span> &gt;&gt; value;	<span class="comment">//get first value</span></span><br><span class="line"><span class="keyword">while</span> (<span class="keyword">inFile</span>.good())	<span class="comment">//while input good and not at EOF</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//loop body goes here</span></span><br><span class="line">	<span class="keyword">inFile</span> &gt;&gt; value; <span class="comment">//get next value</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>鉴于以下事实，可以对上述代码进行精简：表达式inFile&gt;&gt;value的结果为inFiel，而在需要一个bool值的情况下，inFile的结果为inFile.good()，即true或false。<br>因此，可以将两条输入语句用<code>一条用作循环测试的输入语句</code>代替。也就是说，可以将上述循环结构替换为如下循环结构：<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// abbreviated file-reading <span class="keyword">loop</span> design</span><br><span class="line">// omit pre-<span class="keyword">loop</span> input</span><br><span class="line"><span class="keyword">while</span> (inFiel &gt;&gt; value)	       //read <span class="keyword">and</span> test <span class="keyword">for</span> success</span><br><span class="line">&#123;</span><br><span class="line">	//<span class="keyword">loop</span> <span class="keyword">body</span> goes here </span><br><span class="line">	// cmit <span class="keyword">end</span>-<span class="keyword">of</span>-<span class="keyword">loop</span> input</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种设计仍然遵循了在测试前进行读取的规则，因此要计算表达式inFile &gt;&gt; value的值，程序必须首先试图将一个数字读取到value中。</p>
 
       
     </div>
@@ -465,12 +466,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>缓冲区溢出练习</a></p>
+  <p><span>本文标题:</span>学习笔记：I/O读操作</a></p>
   <p><span>文章作者:</span>water</a></p>
-  <p><span>发布时间:</span>2018年07月01日 - 21:54:52</p>
-  <p><span>最后更新:</span>2018年07月01日 - 22:52:52</p>
-  <p><span>原始链接:</span><a href="/2018/07/01/auth-overflow/" title="缓冲区溢出练习">http://9cat.top/2018/07/01/auth-overflow/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/01/auth-overflow/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年07月18日 - 15:20:52</p>
+  <p><span>最后更新:</span>2018年07月18日 - 16:03:50</p>
+  <p><span>原始链接:</span><a href="/2018/07/18/学习笔记：I-O读操作/" title="学习笔记：I/O读操作">http://9cat.top/2018/07/18/学习笔记：I-O读操作/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/18/学习笔记：I-O读操作/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -516,6 +517,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/I-O/" rel="tag"># I/O</a>
+          
+        </div>
+      
 
       
       
@@ -525,8 +532,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/01/一位程序员的十年总结/" rel="next" title="一位程序员的十年总结(转载)">
-                <i class="fa fa-chevron-left"></i> 一位程序员的十年总结(转载)
+              <a href="/2018/07/18/学习笔记：I-O写操作/" rel="next" title="学习笔记：I/O写操作">
+                <i class="fa fa-chevron-left"></i> 学习笔记：I/O写操作
               </a>
             
           </div>
@@ -534,10 +541,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/02/2-2-1实例-基于TCP的通信/" rel="prev" title="2.2.1实例;基于TCP的通信">
-                2.2.1实例;基于TCP的通信 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -615,8 +618,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -715,6 +727,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序说明"><span class="nav-number">1.</span> <span class="nav-text">程序说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
