@@ -99,7 +99,7 @@
 <meta property="og:description" content="前面讲解了if…else…的分支结构，接下来介绍switch…case…default的分支结构。switch分支结构是一种比较灵活的结构，它的反汇编代码可以生成多种形式，这里只介绍它的其中一种形式。 1.switch分支结构例子程序先写例子代码，再对例子代码进行介绍。例子代码如下：1234567891011121314151617181920212223242526272829303132333">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://9cat.top/2018/07/23/逆向基础：switch结构分析/1.png">
-<meta property="og:updated_time" content="2018-07-23T13:42:26.925Z">
+<meta property="og:updated_time" content="2018-07-23T14:06:45.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="逆向基础：switch结构分析">
 <meta name="twitter:description" content="前面讲解了if…else…的分支结构，接下来介绍switch…case…default的分支结构。switch分支结构是一种比较灵活的结构，它的反汇编代码可以生成多种形式，这里只介绍它的其中一种形式。 1.switch分支结构例子程序先写例子代码，再对例子代码进行介绍。例子代码如下：1234567891011121314151617181920212223242526272829303132333">
@@ -355,7 +355,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-23T21:42:26+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-23T22:06:45+08:00">
                 2018-07-23
               </time>
             
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,000
+                  1,247
                 </span>
               
 
@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -447,7 +447,8 @@
 <h1 id="2-逆向反汇编解析"><a href="#2-逆向反汇编解析" class="headerlink" title="2.逆向反汇编解析"></a>2.逆向反汇编解析</h1><p>反汇编代码分两部分来看，一部分是default分支，另一部分是case分支。先看IDA生成的流程结构图，如下图所示：<br><img src="1.png" alt=""><br>在上图中可以看到2个大的分支，在左边的分支中又有4个小的分支。在整体结构上来看，不同于C语言的代码形式。其实右边的部分是case部分，右边的部分是default部分。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">;<span class="selector-tag">var_4</span>相当于<span class="selector-tag">nNum</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D768</span>                 <span class="selector-tag">mov</span>     <span class="selector-attr">[ebp+var_4]</span>, 0   </span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D76F</span>                 <span class="selector-tag">lea</span>     <span class="selector-tag">eax</span>, <span class="selector-attr">[ebp+var_4]</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D772</span>                 <span class="selector-tag">push</span>    <span class="selector-tag">eax</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D773</span>                 <span class="selector-tag">push</span>    <span class="selector-tag">offset</span> <span class="selector-tag">aD</span>       ; "%<span class="selector-tag">d</span>"</span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D778</span>                 <span class="selector-tag">call</span>    _<span class="selector-tag">scanf</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D77D</span>                 <span class="selector-tag">add</span>     <span class="selector-tag">esp</span>, 8</span><br></pre></td></tr></table></figure>
 <p>scanf()函数是C语言标准输入函数，第1个参数为<code>格式化字符串</code>，第2个参数是<code>接收数据的地址</code>。在0040D76F地址处，代码lea eax, [ebp+var_4]将nNum变量的地址送入eax寄存器。经过scanf()函数调用，var_4（相当于nNum）接收了用户的输入。<br>通过scanf()函数接收到用户的输入后，就进入switch()分支的部分，至少在C语言代码中是这样的。下面看一下反汇编代码得到情况：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D780</span>                 <span class="selector-tag">mov</span>     <span class="selector-tag">ecx</span>, <span class="selector-attr">[ebp+var_4]</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D783</span>                 <span class="selector-tag">mov</span>     <span class="selector-attr">[ebp+var_8]</span>, <span class="selector-tag">ecx</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D786</span>                 <span class="selector-tag">mov</span>     <span class="selector-tag">edx</span>, <span class="selector-attr">[ebp+var_8]</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D789</span>                 <span class="selector-tag">sub</span>     <span class="selector-tag">edx</span>, 1</span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D78C</span>                 <span class="selector-tag">mov</span>     <span class="selector-attr">[ebp+var_8]</span>, <span class="selector-tag">edx</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D78F</span>                 <span class="selector-tag">cmp</span>     <span class="selector-attr">[ebp+var_8]</span>, 3  ; <span class="selector-tag">switch</span> 4 <span class="selector-tag">cases</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D793</span>                 <span class="selector-tag">ja</span>      <span class="selector-tag">short</span> <span class="selector-tag">loc_40D7DB</span> ; <span class="selector-tag">jumptable</span> 0040<span class="selector-tag">D798</span> <span class="selector-tag">default</span> <span class="selector-tag">case</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D795</span>                 <span class="selector-tag">mov</span>     <span class="selector-tag">eax</span>, <span class="selector-attr">[ebp+var_8]</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D798</span>                 <span class="selector-tag">jmp</span>     <span class="selector-tag">ds</span><span class="selector-pseudo">:off_40D7FB</span><span class="selector-attr">[eax*4]</span> ; <span class="selector-tag">switch</span> <span class="selector-tag">jump</span></span><br></pre></td></tr></table></figure></p>
-<p><code>0040D780</code>地址处的代码是mov ecx, [ebp+var_4]，也就是把nNum的值赋给了ecx寄存器。接着<code>0040D783</code>地址处的代码是mov     [ebp+var_8], ecx，这句将ecx的值又赋给了var_8这个变量。但是，在C语言代码中只定义了一个变量，而var_8是怎么来的？var_8是编译器产生的一个临时变量，用来保存一些数据。接着在<code>0040D786</code>地址处的代码又将var_8的值赋给了edx寄存器。然后<code>0040D789</code>和<code>0040D78C</code>地址处的代码将edx的值减1后又赋给了var_8变量。<br>这部分反汇编代码在C语言中是没有对应关系的。但是这部分代码的用处是什么呢？接着往下看<code>0040D78F</code>地址处是一条cmp     [ebp+var_8], 3反汇编代码。比较后，如果var_8大于3的话，那么<code>0040D793</code>地址处的无符号条件跳转指令ja将会进行跳转，去执行default部分的代码。<code>0040D78F</code>地址处为什么会和3进行比较呢？case分支的范围是1~4，而var_8在和3比较之前进行了减1的操作。如果var_8的值的范围在1~4之间，减1后的范围就变成了0~3之间。如果var_8的值小于等于3，则说明switch要执行case中的部分；如果是其他值的话，则要执行default流程。上面流程图被分为两部分就是这里的比较所引起的。<br>注：为什么判断时只判断是否大于3呢？小于等于3不一定意味着0~3的范围吧？也可能存在负数的情况。这样的质疑是对的，但是在条件分支处使用的条件跳转指令是“ja”，它是一个无符号的条件跳转指令，即使存在负数也会被当正数进行解析。</p>
+<p><code>0040D780</code>地址处的代码是mov ecx, [ebp+var_4]，也就是把nNum的值赋给了ecx寄存器。接着<code>0040D783</code>地址处的代码是mov     [ebp+var_8], ecx，这句将ecx的值又赋给了var_8这个变量。但是，在C语言代码中只定义了一个变量，而var_8是怎么来的？var_8是编译器产生的一个临时变量，用来保存一些数据。接着在<code>0040D786</code>地址处的代码又将var_8的值赋给了edx寄存器。然后<code>0040D789</code>和<code>0040D78C</code>地址处的代码将edx的值减1后又赋给了var_8变量。<br>这部分反汇编代码在C语言中是没有对应关系的。但是这部分代码的用处是什么呢？接着往下看<code>0040D78F</code>地址处是一条cmp     [ebp+var_8], 3反汇编代码。比较后，如果var_8大于3的话，那么<code>0040D793</code>地址处的无符号条件跳转指令ja将会进行跳转，去执行default部分的代码。<code>0040D78F</code>地址处为什么会和3进行比较呢？case分支的范围是1~4，而var_8在和3比较之前进行了减1的操作。如果var_8的值的范围在1~4之间，减1后的范围就变成了0~3之间。如果var_8的值小于等于3，则说明switch要执行case中的部分；如果是其他值的话，则要执行default流程。上面流程图被分为两部分就是这里的比较所引起的。<br>注：为什么判断时只判断是否大于3呢？小于等于3不一定意味着0~3的范围吧？也可能存在负数的情况。这样的质疑是对的，但是在条件分支处使用的条件跳转指令是“ja”，它是一个无符号的条件跳转指令，即使存在负数也会被当正数进行解析。<br>通过上面的分析可以发现，switch分支对于定位是执行case分支还是default分支的方法很高效。如果是执行default分支，那么只需要比较一次即可直接执行。<br>C语言中，switch语句有4个case部分，是不是应该比较4次呢？由于C语言代码中的case项是一个连续的序列，因此编译器又对代码做了优化。0040D795和0040D798地址处的两句代码即可准确找到要执行的case分支。再来看一下这两个地址处的反汇编代码，如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D795</span>                 <span class="selector-tag">mov</span>     <span class="selector-tag">eax</span>, <span class="selector-attr">[ebp+var_8]</span></span><br><span class="line"><span class="selector-class">.text</span><span class="selector-pseudo">:0040D798</span>                 <span class="selector-tag">jmp</span>     <span class="selector-tag">ds</span><span class="selector-pseudo">:off_40D7FB</span><span class="selector-attr">[eax*4]</span> ; <span class="selector-tag">switch</span> <span class="selector-tag">jump</span></span><br></pre></td></tr></table></figure></p>
+<p>0040D795地址处的代码将var_8的值传递给了eax寄存器，由于前面的代码没有发生跳转，那么var_8的取值范围必定在0~3之间。0040D798地址处的跳转很奇怪，像一个数组（其实就是一个数组），数组的下表由eax寄存器进行寻址。</p>
 
       
     </div>
@@ -469,7 +470,7 @@
   <p><span>本文标题:</span>逆向基础：switch结构分析</a></p>
   <p><span>文章作者:</span>water</a></p>
   <p><span>发布时间:</span>2018年07月23日 - 14:12:33</p>
-  <p><span>最后更新:</span>2018年07月23日 - 21:42:26</p>
+  <p><span>最后更新:</span>2018年07月23日 - 22:06:45</p>
   <p><span>原始链接:</span><a href="/2018/07/23/逆向基础：switch结构分析/" title="逆向基础：switch结构分析">http://9cat.top/2018/07/23/逆向基础：switch结构分析/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://9cat.top/2018/07/23/逆向基础：switch结构分析/"  aria-label="复制成功！"></i></span>
   </p>
