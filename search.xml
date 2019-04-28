@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[我的简历]]></title>
+    <url>%2F2019%2F04%2F28%2F%E6%88%91%E7%9A%84%E7%AE%80%E5%8E%86%2F</url>
+    <content type="text"><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[后缀表达式]]></title>
     <url>%2F2019%2F02%2F12%2F%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[假设我们有一个便携式计算器并想要计算一趟外出购物的花费。为此，我们将一列数据相加并将结果乘以1.06；它是所购物品的价格以及附加的地方税。如果购物各项花销为4.99，5.99和6.99，那么输入这些数据的自然方式将是4.99+5.99+6.991.06=随着计算器的不同这个结果或者是所要的答案19.05，或者是科学答案18.39。最简单的四功能计算器给出第一个答案，但是很多先进的计算器知道乘法的优先级是高于加法的。另一方面，有些项是需要上税的，而有些则不需要，因此，如果只有第一项和最后一项是需要上税的，那么4.99 1.06 + 5.99 + 6.99 1.06 =将在科学计算器上得到正确的答案（18.69）而在简单的计算器上则得到（19.37）。科学计算器一般包含括号，因此我们总可以通过加括号得到正确的答案，但是使用简单的计算器我们需要记住中间结果。该例的典型计算顺序可以是将4.99和1.06相乘并存为A1，然后将5.99和A1相加，再将结果存入A1。我们再将6.99和1.06相乘的结果存入A2，最后A1和A2相加并将最后的结果存入A1。我们可以将这种操作顺序书写如下：4.99 1.06 5.99 + 6.99 1.06 +这种记法叫做后缀（postfix）或逆波兰（reverse Polish）记法，其求值过程恰好就是我们上面所描述的过程。计算这个问题最容易的方法就是使用一个栈，当见到一个数时就把它推入栈中；在遇到一个运算符时该运算符就作用于从该栈弹出的两个数（符号）上，将所得结果推入栈中。例如，后缀表达式6 5 2 3 + 8 + 3 + 计算如下：前四个字符放入栈中，此时栈变成下面读到一个“+”号所以3和2从栈中弹出，并且它们的和5被压入栈中。接着，8进栈。现在见到一个号，因此8和5弹出，并且5 8 = 40进栈。接着又见到一个“+”号，因此40和5被弹出，并且40 + 5 = 45进栈。现在将3压入栈中。然后“+”使得3和45从栈中弹出，并将45 + 3 = 48压入栈中。最后，遇到一个“”号，从栈中弹出48和6，并将结果6 * 48 = 288 压进栈中。]]></content>
@@ -246,14 +251,14 @@
     <content type="text"><![CDATA[dos下的一些命令netstat -s -p tcp/udp/icmp/ip ping -l 65500 -t 192.168.1.1 #死亡之ping for /L %i IN (1,1,254) DO ping -w 2 -n 1 192.168.1.%i #批处理ping for /L %i IN (1,1,254) DO ping -w 2 -n 1 192.168.2.%i nbtstat -a 192.168.1.106 探测主机名 add portopening protocol =all port=135 name=关闭135端口 mode=enable SCOP=Subnet netsh advfirewall firewall add portopening protocol =tcp port=55555 name重要服务 mode=enable delete portopening protocol =tcp port=55555 interface=重要服务 delete portopening TCP 135]]></content>
   </entry>
   <entry>
-    <title><![CDATA[vim]]></title>
-    <url>%2F2018%2F06%2F24%2Fvim%2F</url>
-    <content type="text"><![CDATA[vim命令行模式，插入模式，末行模式命令模式，不能输入字符移动命令：j 向下移动光标k 向上移动光标h 向左移动光标l 向右移动光标gg 文件顶部G 文件末尾数字gg 移动到数字对应行数字G 移动到数字对应行[ 移动到段落首] 移动到段落尾 Ctrl+b 向上翻页Ctrl+f 向下翻页H 屏幕顶部M 屏幕中间L 屏幕顶部 按i进入插入模式，可输入任意字符按ESC退出插入模式按：进入末行模式 撤销和取消撤销u ctrl+r 删除xn+x （n为数字） 删除N个字符dd 删除光标所在行D 一直删除至行尾dw 删除选中之后直到空格d+数字G 删除选中行到指定行 可视模式按v：可视模式，可选中代码按V：行Ctrl+v：块（可结合移动命令，例如：v+gg） 复制粘贴命令：yy:复制整行代码p:粘贴yy19p 复制19行]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[memory]]></title>
     <url>%2F2018%2F06%2F24%2Fmemory%2F</url>
     <content type="text"><![CDATA[在C语言中，与其他编译语言一样，编译代码放入text段，而变量驻留在其他段中。究竟是哪个存储器变量取决于变量如何定义。定义在所有函数之外的变量被认为是全局变量。在任何变量前增加关键字static都会使该变量成为静态变量。如果使用数据将静态变量或全局变量初始化了，它们就会存储在data内存段中，否则，这些变量就会存储在bss内存段中。首先，必须使用用户名为malloc()的内存分配函数对对堆内存段中的内存进行分配。通常使用指针来引用堆中的内存。最后，其余的函数变量存储在堆栈内存中。因为堆栈可以包含许多不同的栈帧，所以栈帧变量可以在不同的函数上下文内保持唯一。 12345678910111213141516171819202122232425262728293031#include &lt;stdio.h&gt;int global_var;int global_initialized_var=5;void function()&#123; int stack_var; printf("the function's stack_var is at addres 0x%08x\n",&amp;stack_var);&#125;int main()&#123; int stack_var; static int static_initialized_var=5; static int static_var; int *heap_var_ptr; heap_var_ptr=(int *)malloc(4); printf("global_initialized_var is at addres 0x%08x\n",&amp;global_initialized_var); printf("static_initialized_var is at addres 0x%08x\n\n",&amp;static_initialized_var); printf("static_var is at addres 0x%08x\n",&amp;static_var); printf("global_var is at addres 0x%08x\n\n",&amp;global_var); printf("heap_var is at addres 0x%08x\n\n",heap_var_ptr); printf("static_var is addres 0x%08x\n",&amp;stack_var); function();&#125;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[vim]]></title>
+    <url>%2F2018%2F06%2F24%2Fvim%2F</url>
+    <content type="text"><![CDATA[vim命令行模式，插入模式，末行模式命令模式，不能输入字符移动命令：j 向下移动光标k 向上移动光标h 向左移动光标l 向右移动光标gg 文件顶部G 文件末尾数字gg 移动到数字对应行数字G 移动到数字对应行[ 移动到段落首] 移动到段落尾 Ctrl+b 向上翻页Ctrl+f 向下翻页H 屏幕顶部M 屏幕中间L 屏幕顶部 按i进入插入模式，可输入任意字符按ESC退出插入模式按：进入末行模式 撤销和取消撤销u ctrl+r 删除xn+x （n为数字） 删除N个字符dd 删除光标所在行D 一直删除至行尾dw 删除选中之后直到空格d+数字G 删除选中行到指定行 可视模式按v：可视模式，可选中代码按V：行Ctrl+v：块（可结合移动命令，例如：v+gg） 复制粘贴命令：yy:复制整行代码p:粘贴yy19p 复制19行]]></content>
   </entry>
   <entry>
     <title><![CDATA[多线程编程基础]]></title>

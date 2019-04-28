@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://9cat.top/"/>
-  <updated>2019-02-12T02:27:46.887Z</updated>
+  <updated>2019-04-28T03:32:07.680Z</updated>
   <id>http://9cat.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的简历</title>
+    <link href="http://9cat.top/2019/04/28/%E6%88%91%E7%9A%84%E7%AE%80%E5%8E%86/"/>
+    <id>http://9cat.top/2019/04/28/我的简历/</id>
+    <published>2019-04-28T03:28:33.000Z</published>
+    <updated>2019-04-28T03:32:07.680Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="1.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>后缀表达式</title>
@@ -645,13 +666,13 @@
   </entry>
   
   <entry>
-    <title>vim</title>
-    <link href="http://9cat.top/2018/06/24/vim/"/>
-    <id>http://9cat.top/2018/06/24/vim/</id>
+    <title>memory</title>
+    <link href="http://9cat.top/2018/06/24/memory/"/>
+    <id>http://9cat.top/2018/06/24/memory/</id>
     <published>2018-06-24T09:28:46.000Z</published>
-    <updated>2018-06-24T09:33:48.185Z</updated>
+    <updated>2018-07-01T01:37:00.402Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>vim<br>命令行模式，插入模式，末行模式<br>命令模式，不能输入字符<br><code>移动命令：</code><br>j        向下移动光标<br>k        向上移动光标<br>h        向左移动光标<br>l        向右移动光标<br>gg         文件顶部<br>G          文件末尾<br>数字gg 移动到数字对应行<br>数字G  移动到数字对应行<br>[        移动到段落首<br>]        移动到段落尾</p><p>Ctrl+b  向上翻页<br>Ctrl+f  向下翻页<br>H         屏幕顶部<br>M         屏幕中间<br>L         屏幕顶部</p><p>按i进入插入模式，可输入任意字符<br>按ESC退出插入模式<br>按：进入末行模式</p><p><code>撤销和取消撤销</code><br>u     ctrl+r</p><p><code>删除</code><br>x<br>n+x （n为数字）    删除N个字符<br>dd              删除光标所在行<br>D               一直删除至行尾<br>dw              删除选中之后直到空格<br>d+数字G          删除选中行到指定行</p><p><code>可视模式</code><br>按v：可视模式，可选中代码<br>按V：行<br>Ctrl+v：块<br>（可结合移动命令，例如：v+gg）</p><p>复制粘贴命令：<br>yy:复制整行代码<br>p:粘贴<br>yy19p  复制19行</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在C语言中，与其他编译语言一样，编译代码放入text段，而变量驻留在其他段中。<br>究竟是哪个存储器变量取决于变量如何定义。定义在所有函数之外的变量被认为是全局变量。<br>在任何变量前增加关键字static都会使该变量成为静态变量。<br>如果使用数据将静态变量或全局变量初始化了，它们就会存储在data内存段中，否则，这些变量就会存储在bss内存段中。<br>首先，必须使用用户名为malloc()的内存分配函数对对堆内存段中的内存进行分配。通常使用指针来引用堆中的内存。<br>最后，其余的函数变量存储在堆栈内存中。因为堆栈可以包含许多不同的栈帧，所以栈帧变量可以在不同的函数上下文内保持唯一。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> global_var;</span><br><span class="line"><span class="keyword">int</span> global_initialized_var=<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> stack_var;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"the function's stack_var is at addres 0x%08x\n"</span>,&amp;stack_var);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> stack_var;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> static_initialized_var=<span class="number">5</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> static_var;</span><br><span class="line"><span class="keyword">int</span> *heap_var_ptr;</span><br><span class="line"></span><br><span class="line">heap_var_ptr=(<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"global_initialized_var is at addres 0x%08x\n"</span>,&amp;global_initialized_var);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"static_initialized_var is at addres 0x%08x\n\n"</span>,&amp;static_initialized_var);</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"static_var is at addres 0x%08x\n"</span>,&amp;static_var);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"global_var is at addres 0x%08x\n\n"</span>,&amp;global_var);</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"heap_var is at addres 0x%08x\n\n"</span>,heap_var_ptr);</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"static_var is addres 0x%08x\n"</span>,&amp;stack_var);</span><br><span class="line">function();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="memory.png" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -666,13 +687,13 @@
   </entry>
   
   <entry>
-    <title>memory</title>
-    <link href="http://9cat.top/2018/06/24/memory/"/>
-    <id>http://9cat.top/2018/06/24/memory/</id>
+    <title>vim</title>
+    <link href="http://9cat.top/2018/06/24/vim/"/>
+    <id>http://9cat.top/2018/06/24/vim/</id>
     <published>2018-06-24T09:28:46.000Z</published>
-    <updated>2018-07-01T01:37:00.402Z</updated>
+    <updated>2018-06-24T09:33:48.185Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在C语言中，与其他编译语言一样，编译代码放入text段，而变量驻留在其他段中。<br>究竟是哪个存储器变量取决于变量如何定义。定义在所有函数之外的变量被认为是全局变量。<br>在任何变量前增加关键字static都会使该变量成为静态变量。<br>如果使用数据将静态变量或全局变量初始化了，它们就会存储在data内存段中，否则，这些变量就会存储在bss内存段中。<br>首先，必须使用用户名为malloc()的内存分配函数对对堆内存段中的内存进行分配。通常使用指针来引用堆中的内存。<br>最后，其余的函数变量存储在堆栈内存中。因为堆栈可以包含许多不同的栈帧，所以栈帧变量可以在不同的函数上下文内保持唯一。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> global_var;</span><br><span class="line"><span class="keyword">int</span> global_initialized_var=<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> stack_var;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"the function's stack_var is at addres 0x%08x\n"</span>,&amp;stack_var);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> stack_var;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> static_initialized_var=<span class="number">5</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> static_var;</span><br><span class="line"><span class="keyword">int</span> *heap_var_ptr;</span><br><span class="line"></span><br><span class="line">heap_var_ptr=(<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"global_initialized_var is at addres 0x%08x\n"</span>,&amp;global_initialized_var);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"static_initialized_var is at addres 0x%08x\n\n"</span>,&amp;static_initialized_var);</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"static_var is at addres 0x%08x\n"</span>,&amp;static_var);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"global_var is at addres 0x%08x\n\n"</span>,&amp;global_var);</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"heap_var is at addres 0x%08x\n\n"</span>,heap_var_ptr);</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"static_var is addres 0x%08x\n"</span>,&amp;stack_var);</span><br><span class="line">function();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="memory.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>vim<br>命令行模式，插入模式，末行模式<br>命令模式，不能输入字符<br><code>移动命令：</code><br>j        向下移动光标<br>k        向上移动光标<br>h        向左移动光标<br>l        向右移动光标<br>gg         文件顶部<br>G          文件末尾<br>数字gg 移动到数字对应行<br>数字G  移动到数字对应行<br>[        移动到段落首<br>]        移动到段落尾</p><p>Ctrl+b  向上翻页<br>Ctrl+f  向下翻页<br>H         屏幕顶部<br>M         屏幕中间<br>L         屏幕顶部</p><p>按i进入插入模式，可输入任意字符<br>按ESC退出插入模式<br>按：进入末行模式</p><p><code>撤销和取消撤销</code><br>u     ctrl+r</p><p><code>删除</code><br>x<br>n+x （n为数字）    删除N个字符<br>dd              删除光标所在行<br>D               一直删除至行尾<br>dw              删除选中之后直到空格<br>d+数字G          删除选中行到指定行</p><p><code>可视模式</code><br>按v：可视模式，可选中代码<br>按V：行<br>Ctrl+v：块<br>（可结合移动命令，例如：v+gg）</p><p>复制粘贴命令：<br>yy:复制整行代码<br>p:粘贴<br>yy19p  复制19行</p>]]></content>
     
     <summary type="html">
     
